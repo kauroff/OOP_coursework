@@ -1,5 +1,5 @@
-from src.VacanciesAPI import HeadHunterAPI
-from src.IteractionWithVacancies import Vacancy, JSONSaver
+from src.VacanciesAPI import HeadHunterAPI, Vacancy
+from src.IteractionWithVacancies import JSONSaver
 
 # Создание экземпляра класса для работы с API сайтов с вакансиями
 hh_api = HeadHunterAPI()
