@@ -1,15 +1,13 @@
 from abc import ABC, abstractmethod
 
 
-class Vacancy():
-    def __init__(self, name: str, url: str, salary: str, experience: str):
-        self.name = name
-        self.url = url
-        self.salary = salary
-        self.experience = experience
-    def cast_to_object_list(self):
+class Connector(ABC):
+    pass
+
+
+class JSONSaver(Connector):
+    def add_vacancy(self, vacancy):
         pass
 
-
-class JSONSaver(ABC):
-    pass
+    def delete_vacancy(self, vacancy):
+        pass

@@ -3,6 +3,9 @@ import requests
 
 
 class Parser(ABC):
+    """
+    Абстрактный класс для работы с API сервисов
+    """
 
     @abstractmethod
     def get_vacancies(self, keyword):
@@ -27,3 +30,29 @@ class HeadHunterAPI(Parser):
             vacancies = response.json()['items']
             self.vacancies.extend(vacancies)
             self.params['page'] += 1
+        return self.vacancies
+
+class Vacancy:
+    """
+    Класс для работы с вакансиями
+    """
+    name: str
+    url: str
+    salary: int or str
+    address: str
+    experience: str
+
+    def __init__(self, name, url, salary, address, experience):
+        self.name = name
+        self.url = url
+        self.salary = salary
+        self.address = address
+        self.experience = experience
+
+    def cast_to_object_list(self):
+        pass
+
+
+hh_api = HeadHunterAPI()
+hh_vacancies = hh_api.get_vacancies("Python")
+print(hh_vacancies)
