@@ -27,3 +27,9 @@ class HeadHunterAPI(Parser):
             vacancies = response.json()['items']
             self.vacancies.extend(vacancies)
             self.params['page'] += 1
+        return vacancies
+
+
+hh_api = HeadHunterAPI()
+hh_vacancies = hh_api.get_vacancies("Python")
+print(hh_vacancies)
