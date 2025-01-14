@@ -11,7 +11,7 @@ vacancies_list = Vacancy.cast_to_object_list(hh_vacancies)
 vacancy = Vacancy("Python Developer", "<https://hh.ru/vacancy/123456>", "100 000-150 000 руб.", 'Москва',
                   "Требования: опыт работы от 3 лет...")
 
-json_saver = JSONSaver()
+json_saver = JSONSaver(vacancies_list)
 json_saver.add_vacancy(vacancy)
 json_saver.delete_vacancy(vacancy)
 
