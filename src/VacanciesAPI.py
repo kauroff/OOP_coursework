@@ -25,9 +25,9 @@ class HeadHunterAPI(Parser):
 
     def get_vacancies(self, keyword):
         """
-        Получение вакансий с hh.ru в формате JSON
+        Получение вакансий с hh.ru
         :param keyword: ключевое слово
-        :return: JSON-словарь с вакансиями
+        :return: Список словарей с вакансиями
         """
         self.params['text'] = keyword
         while self.params.get('page') != 20:
@@ -59,7 +59,7 @@ class Vacancy:
     @staticmethod
     def cast_to_object_list(list_of_vacancies: list):
         """
-        Преобразование набора данных из JSON в список объектов
+        Преобразование набора данных из словаря в список объектов
         :return: список объектов
         """
         vacancies_list = []
@@ -70,13 +70,13 @@ class Vacancy:
             vacancy_type = item['type']
             try:
                 address = item['address']['city']
-            except:
+            except TypeError:
                 address = 'Адрес не указан'
             requirement = item['snippet']['requirement']
             responsibility = item['snippet']['responsibility']
             try:
                 work_format = item['work_format'][0]['name']
-            except:
+            except IndexError:
                 work_format = 'Формат не указан'
             experience = item['experience']['name']
             employment = item['employment']['name']
@@ -88,5 +88,5 @@ class Vacancy:
 
 hh_api = HeadHunterAPI()
 hh_vacancies = hh_api.get_vacancies("Python")
-# print(hh_vacancies)
-print(Vacancy.cast_to_object_list(hh_vacancies))
+print(type(hh_vacancies[0]))
+# print(Vacancy.cast_to_object_list(hh_vacancies))
