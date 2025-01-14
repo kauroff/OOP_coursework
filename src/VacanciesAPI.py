@@ -42,11 +42,6 @@ class Vacancy:
     """
     Класс для работы с вакансиями
     """
-    name: str
-    url: str
-    salary: int or str
-    address: str
-    experience: str
 
     def __init__(self, name, url, salary, vacancy_type, address, requirement, responsibility, work_format, experience,
                  employment):
@@ -76,13 +71,13 @@ class Vacancy:
             try:
                 address = item['address']['city']
             except:
-                address = None
+                address = 'Адрес не указан'
             requirement = item['snippet']['requirement']
             responsibility = item['snippet']['responsibility']
             try:
                 work_format = item['work_format'][0]['name']
             except:
-                work_format = None
+                work_format = 'Формат не указан'
             experience = item['experience']['name']
             employment = item['employment']['name']
             vacancies_list.append(
