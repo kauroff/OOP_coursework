@@ -66,12 +66,13 @@ class Vacancy:
             name = item['name']
             url = item['id']
             try:
-                salary = item['salary']['from']
-            except TypeError:
+                salary = item['salary']
                 try:
-                    salary = item['salary']['to']
+                    salary = item['salary']['from']
                 except TypeError:
-                    salary = 0
+                    salary = item['salary']['to']
+            except TypeError:
+                salary = 0
             try:
                 address = item['address']['city']
             except TypeError:
