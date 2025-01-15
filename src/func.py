@@ -10,21 +10,15 @@ def filter_vacancies(vacancies_list, filter_words):
         try:
             requirement = item.requirement.split()
         except AttributeError:
-            requirement = None
+            requirement = []
         try:
             responsibility = item.responsibility.split()
         except AttributeError:
-            responsibility = None
+            responsibility = []
 
-        # Requirement или Responsibility могут быть объектами NoneType, которые не итерируются
-        if responsibility is None:
-            if (filter_words in requirement and item.experience == 'Нет опыта' or 'От 1 года до 3 лет'
-                    and item.address == 'Москва'):
-                data.append(item)
-        elif requirement is None:
-            if (filter_words in responsibility and item.experience == 'Нет опыта' or 'От 1 года до 3 лет'
-                    and item.address == 'Москва'):
-                data.append(item)
+        if (filter_words in (requirement and responsibility) and item.experience == 'Нет опыта' or 'От 1 года до 3 лет'
+                and item.address == 'Москва'):
+            data.append(item)
 
     return data
 
@@ -65,10 +59,7 @@ def get_top_vacancies(sorted_vacancies, top_n):
     :param top_n: количество вакансий
     :return: конечный результат
     """
-    top_vacancies = []
-    for i in range(top_n - 1):
-        top_vacancies.append(sorted_vacancies[i])
-    return top_vacancies
+    return sorted_vacancies[:top_n]
 
 
 def print_vacancies(top_vacancies):

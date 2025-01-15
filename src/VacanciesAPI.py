@@ -65,14 +65,16 @@ class Vacancy:
         for item in list_of_vacancies:
             name = item['name']
             url = item['id']
-            try:
-                salary = item['salary']
-                try:
-                    salary = item['salary']['from']
-                except TypeError:
-                    salary = item['salary']['to']
-            except TypeError:
-                salary = 0
+            # try:
+            #     salary = item['salary']
+            # except TypeError:
+            #     try:
+            #         salary = item['salary']['from']
+            #     except TypeError:
+            #         try:
+            #             salary = item['salary']['to']
+            #         except TypeError:
+            #             salary = 0
             try:
                 address = item['address']['city']
             except TypeError:
