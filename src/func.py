@@ -50,9 +50,9 @@ def sort_vacancies(ranged_vacancies):
     :return: отсортированный список объектов
     """
     N = len(ranged_vacancies)
-    for i in range(N - 1):
+    for i in range(N):
         for j in range(N - 1 - i):
-            if ranged_vacancies[j].salary > ranged_vacancies[j + 1].salary:
+            if ranged_vacancies[j].salary < ranged_vacancies[j + 1].salary:
                 ranged_vacancies[j].salary, ranged_vacancies[j + 1].salary = ranged_vacancies[j + 1].salary, \
                     ranged_vacancies[j].salary
     return ranged_vacancies
@@ -66,8 +66,8 @@ def get_top_vacancies(sorted_vacancies, top_n):
     :return: конечный результат
     """
     top_vacancies = []
-    for i in range(top_n):
-        top_vacancies.append(sorted_vacancies[-top_n - 1])
+    for i in range(top_n - 1):
+        top_vacancies.append(sorted_vacancies[i])
     return top_vacancies
 
 

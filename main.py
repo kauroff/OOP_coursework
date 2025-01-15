@@ -30,7 +30,7 @@ def user_interaction():
 
     top_n = int(input("Введите количество вакансий для вывода в топ N: "))
     filter_words = input("Введите ключевые слова для фильтрации вакансий: ").split()
-    salary_range = input("Введите желаемую зарплату: ")  # Пример: 100000
+    salary_range = input("Введите желаемую зарплату: ")
 
     filtered_vacancies = filter_vacancies(vacancies_list, filter_words)
 
