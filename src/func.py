@@ -7,9 +7,25 @@ def filter_vacancies(vacancies_list, filter_words):
     """
     data = []
     for item in vacancies_list:
-        if (filter_words in (item.requirement.split() + item.responsibility.split())
-                and item.experience == 'Нет опыта' or 'От 1 года до 3 лет' and item.address == 'Москва'):
-            data.append(item)
+        try:
+            requirement = item.requirement.split()
+        except AttributeError:
+            requirement = None
+        try:
+            responsibility = item.responsibility.split()
+        except AttributeError:
+            responsibility = None
+
+        # Requirement или Responsibility могут быть объектами NoneType, которые не итерируются
+        if responsibility is None:
+            if (filter_words in requirement and item.experience == 'Нет опыта' or 'От 1 года до 3 лет'
+                    and item.address == 'Москва'):
+                data.append(item)
+        elif requirement is None:
+            if (filter_words in responsibility and item.experience == 'Нет опыта' or 'От 1 года до 3 лет'
+                    and item.address == 'Москва'):
+                data.append(item)
+
     return data
 
 

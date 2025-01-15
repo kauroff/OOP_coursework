@@ -14,12 +14,11 @@ def user_interaction():
     json_saver = JSONSaver(vacancies_list)
     answer = input('''Если хотите добавить вакансию в файл - введите A
     \nЕсли хотите удалить вакансию из файла - введите D
-    \nЕсли хотите продолжить работать с программой без изменений - нажмите enter''')
+    \nЕсли хотите продолжить работать с программой без изменений - нажмите enter\nВвод: ''')
     if answer == 'A':
         name, url, salary, address, requirement, responsibility, work_format, experience, employment = input(
-            '''Введите вакансию для добавления в файл в формате: <Название вакансии>, <Ссылка на вакансию>, <Зарплата>, 
-            <Адрес>, <Требования>, <Обязанности>, <Формат работы>, <Опыт>, <График>
-            \nЕсли не хотите добавлять - нажмите enter''').split(', ')
+            '''Введите вакансию для добавления в файл в формате: <Название вакансии>, <Ссылка на вакансию>, <Зарплата>,
+            <Адрес>, <Требования>, <Обязанности>, <Формат работы>, <Опыт>, <График>''').split(', ')
         vacancy = Vacancy(name, url, salary, address, requirement, responsibility, work_format, experience, employment)
         json_saver.add_vacancy(vacancy)
     elif answer == 'D':
