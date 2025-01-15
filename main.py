@@ -1,11 +1,8 @@
 from src.VacanciesAPI import HeadHunterAPI, Vacancy
 from src.IteractionWithVacancies import JSONSaver
+from src.func import filter_vacancies, get_top_vacancies, sort_vacancies, get_vacancies_by_salary, print_vacancies
 
 hh_api = HeadHunterAPI()
-
-# Пример работы конструктора класса с одной вакансией
-vacancy = Vacancy("Python Developer", "<https://hh.ru/vacancy/123456>", "100 000-150 000 руб.", 'Москва',
-                  "Требования: опыт работы от 3 лет...", '', '', '', '')
 
 
 # Функция для взаимодействия с пользователем
@@ -26,12 +23,15 @@ def user_interaction():
         vacancy = Vacancy(name, url, salary, address, requirement, responsibility, work_format, experience, employment)
         json_saver.add_vacancy(vacancy)
     elif answer == 'D':
-        url = input('Введите url вакансии в формате <https://hh.ru/vacancy/123456>')
-        json_saver.delete_vacancy(url)
+        try:
+            url = input('Введите url вакансии в формате <https://hh.ru/vacancy/123456>')
+            json_saver.delete_vacancy(url)
+        except ValueError:
+            print('Вакансии с таким url нет')
 
-    # top_n = int(input("Введите количество вакансий для вывода в топ N: "))
-    # filter_words = input("Введите ключевые слова для фильтрации вакансий: ").split()
-    # salary_range = input("Введите диапазон зарплат: ")  # Пример: 100000 - 150000
+    top_n = int(input("Введите количество вакансий для вывода в топ N: "))
+    filter_words = input("Введите ключевые слова для фильтрации вакансий: ").split()
+    salary_range = input("Введите желаемую зарплату: ")  # Пример: 100000
 
     filtered_vacancies = filter_vacancies(vacancies_list, filter_words)
 
