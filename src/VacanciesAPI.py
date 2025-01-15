@@ -43,12 +43,11 @@ class Vacancy:
     Класс для работы с вакансиями
     """
 
-    def __init__(self, name, url, salary, vacancy_type, address, requirement, responsibility, work_format, experience,
+    def __init__(self, name, url, salary, address, requirement, responsibility, work_format, experience,
                  employment):
         self.name = name
         self.url = f'https://hh.ru/vacancy/{url}'
         self.salary = salary
-        self.vacancy_type = vacancy_type
         self.address = address
         self.requirement = requirement
         self.responsibility = responsibility
@@ -67,7 +66,6 @@ class Vacancy:
             name = item['name']
             url = item['id']
             salary = item['salary']
-            vacancy_type = item['type']
             try:
                 address = item['address']['city']
             except TypeError:
@@ -81,12 +79,6 @@ class Vacancy:
             experience = item['experience']['name']
             employment = item['employment']['name']
             vacancies_list.append(
-                Vacancy(name, url, salary, vacancy_type, address, requirement, responsibility, work_format, experience,
+                Vacancy(name, url, salary, address, requirement, responsibility, work_format, experience,
                         employment))
         return vacancies_list
-
-
-hh_api = HeadHunterAPI()
-hh_vacancies = hh_api.get_vacancies("Python")
-print(type(hh_vacancies[0]))
-# print(Vacancy.cast_to_object_list(hh_vacancies))
