@@ -46,55 +46,44 @@ class JSONSaver(Connector):
         :param vacancies_list: список вакансий
         """
         self.vacancies_list = vacancies_list
-        try:  # проверка на существование данного файла и на его заполненность
-            with open('data/vacancies.json', 'r',
-                      encoding='utf-8') as read_file:  # сначала считываем документ, чтобы случайно его не перезаписать
-                data_file = json.load(read_file, ensure_ascii=False, indent=4)
-        except (FileNotFoundError, TypeError):
-            data_file = []
-        new_data = data_file.extend(self.vacancies_list)
 
-        with open('data/vacancies.json', 'w', encoding='utf-8') as write_file:  # записываем полные данные в файл
-            json.dump(new_data, write_file, ensure_ascii=False, indent=4)
+        with open("data/vacancies.json", "w+", encoding="utf-8") as file:
+            json.dump(self.vacancies_list, file, ensure_ascii=False, indent=4)
 
     def add_vacancy(self, vacancy):
-        new_vacancy = {}
-        with open('data/vacancies.json', 'r', encoding='utf-8') as file:
-            vacancies_data = json.load(file, ensure_ascii=False, indent=4)
+        new_vacancy = {'name': vacancy.name,
+                       'url': f'https://hh.ru/vacancy/{vacancy.url}',
+                       'salary': vacancy.salary,
+                       'address': vacancy.address,
+                       'requirement': vacancy.requirement,
+                       'responsibility': vacancy.responsibility,
+                       'work_format': vacancy.work_format,
+                       'experience': vacancy.experience,
+                       'employment': vacancy.employment}
 
-        new_vacancy['name'] = vacancy.name
-        new_vacancy['url'] = f'https://hh.ru/vacancy/{vacancy.url}'
-        new_vacancy['salary'] = vacancy.salary
-        new_vacancy['address'] = vacancy.address
-        new_vacancy['requirement'] = vacancy.requirement
-        new_vacancy['responsibility'] = vacancy.responsibility
-        new_vacancy['work_format'] = vacancy.work_format
-        new_vacancy['experience'] = vacancy.experience
-        new_vacancy['employment'] = vacancy.employment
+        with open('data/vacancies.json', 'a+', encoding='utf-8') as file:
+            json.dump(new_vacancy, file, ensure_ascii=False, indent=4)
 
-        vacancies_data.append(new_vacancy)
 
-        with open('data/vacancies.json', 'w', encoding='utf-8') as file:
-            json.dump(vacancies_data, file, ensure_ascii=False, indent=4)
+def get_vacancy(self, **kwargs):
+    with open('data/vacancies.json', 'r', encoding='utf-8') as file:
+        vacancies_data = json.load(file, ensure_ascii=False, indent=4)
 
-    def get_vacancy(self, **kwargs):
-        with open('data/vacancies.json', 'r', encoding='utf-8') as file:
-            vacancies_data = json.load(file, ensure_ascii=False, indent=4)
+    for uniq_vacancy in vacancies_data:
+        if kwargs.values() in uniq_vacancy.values():
+            return uniq_vacancy
 
-        for uniq_vacancy in vacancies_data:
-            if kwargs.values() in uniq_vacancy.values():
-                return uniq_vacancy
 
-    def delete_vacancy(self, url):
-        with open('data/vacancies.json', 'r', encoding='utf-8') as file:
-            vacancies_data = json.load(file, ensure_ascii=False, indent=4)
+def delete_vacancy(self, url):
+    with open('data/vacancies.json', 'r', encoding='utf-8') as file:
+        vacancies_data = json.load(file, ensure_ascii=False, indent=4)
 
-        for uniq_vacancy in vacancies_data:
-            if uniq_vacancy['url'] == url:
-                del uniq_vacancy
+    for uniq_vacancy in vacancies_data:
+        if uniq_vacancy['url'] == url:
+            del uniq_vacancy
 
-        with open('data/vacancies.json', 'w', encoding='utf-8') as file:
-            json.dump(vacancies_data, file, ensure_ascii=False, indent=4)
+    with open('data/vacancies.json', 'w', encoding='utf-8') as file:
+        json.dump(vacancies_data, file, ensure_ascii=False, indent=4)
 
 
 class ExcelSaver(Connector):
