@@ -74,16 +74,16 @@ class JSONSaver(Connector):
                        'experience': vacancy.experience,
                        'employment': vacancy.employment}
 
-        with open('data/vacancies.json', 'r', encoding='utf-8') as file:
+        with open('vacancies.json', 'r', encoding='utf-8') as file:
             vacancies_data = json.load(file, ensure_ascii=False, indent=4)
 
         new_data = vacancies_data['vacancies'].append(new_vacancy)
 
-        with open('data/vacancies.json', 'w+', encoding='utf-8') as file:
+        with open('vacancies.json', 'w+', encoding='utf-8') as file:
             json.dump(new_data, file, ensure_ascii=False, indent=4)
 
     def get_vacancy(self, **kwargs):
-        with open('data/vacancies.json', 'r+', encoding='utf-8') as file:
+        with open('vacancies.json', 'r+', encoding='utf-8') as file:
             vacancies_data = json.load(file, ensure_ascii=False, indent=4)
 
         for uniq_vacancy in vacancies_data['vacancies']:
@@ -91,14 +91,14 @@ class JSONSaver(Connector):
                 return uniq_vacancy
 
     def delete_vacancy(self, url):
-        with open('data/vacancies.json', 'r+', encoding='utf-8') as file:
+        with open('vacancies.json', 'r+', encoding='utf-8') as file:
             vacancies_data = json.load(file, ensure_ascii=False, indent=4)
 
         for uniq_vacancy in vacancies_data['vacancies']:
             if uniq_vacancy['url'] == url:
                 del uniq_vacancy
 
-        with open('data/vacancies.json', 'w+', encoding='utf-8') as file:
+        with open('vacancies.json', 'w+', encoding='utf-8') as file:
             json.dump(vacancies_data, file, ensure_ascii=False, indent=4)
 
 

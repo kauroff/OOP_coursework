@@ -18,12 +18,12 @@ def user_interaction():
     if answer == 'A':
         name, url, salary, address, requirement, responsibility, work_format, experience, employment = input(
             '''Введите вакансию для добавления в файл в формате: <Название вакансии>, <Ссылка на вакансию>, <Зарплата>,
-            <Адрес>, <Требования>, <Обязанности>, <Формат работы>, <Опыт>, <График>''').split(', ')
+            <Адрес>, <Требования>, <Обязанности>, <Формат работы>, <Опыт>, <График>:\n''').split(', ')
         vacancy = Vacancy(name, url, salary, address, requirement, responsibility, work_format, experience, employment)
         json_saver.add_vacancy(vacancy)
     elif answer == 'D':
         try:
-            url = input('Введите url вакансии в формате <https://hh.ru/vacancy/123456>')
+            url = input('Введите url вакансии в формате <https://hh.ru/vacancy/123456>\n')
             json_saver.delete_vacancy(url)
         except ValueError:
             print('Вакансии с таким url нет')
