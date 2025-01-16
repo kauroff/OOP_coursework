@@ -50,7 +50,7 @@ class JSONSaver(Connector):
 
         for vacancy in vacancies_list:
             data['vacancies'].append({'name': vacancy.name,
-                                      'url': f'https://hh.ru/vacancy/{vacancy.url}',
+                                      'url': vacancy.url,
                                       'salary': vacancy.salary,
                                       'address': vacancy.address,
                                       'requirement': vacancy.requirement,
