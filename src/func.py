@@ -69,4 +69,14 @@ def print_vacancies(top_vacancies):
     :return: конечный результат
     """
     for element in top_vacancies:
-        print(element)
+        print()
+        print(element.name)
+        print(element.url)
+        print(element.salary)
+        print(element.address)
+        print(element.requirement)
+        print(element.responsibility)
+        print(element.work_format)
+        print(element.experience)
+        print(element.employment)
+        print('________________')
