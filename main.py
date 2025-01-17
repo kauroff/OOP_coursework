@@ -8,7 +8,7 @@ hh_api = HeadHunterAPI()
 # Функция для взаимодействия с пользователем
 def user_interaction():
     # platforms = ["HeadHunter"]
-    search_query = input("Введите поисковый запрос: ")
+    search_query = input("Введите поисковый запрос: ").lower()
     hh_vacancies = hh_api.get_vacancies(search_query)
     vacancies_list = Vacancy.cast_to_object_list(hh_vacancies)
     json_saver = JSONSaver(vacancies_list)
@@ -24,17 +24,11 @@ def user_interaction():
         vacancy = Vacancy(name, url, salary, address, requirement, responsibility, work_format, experience, employment)
         json_saver.add_vacancy(vacancy)
     elif answer == 'G':
-        try:
-            parameter = input('Введите значение:\n')
-            json_saver.get_vacancy(parameter)
-        except ValueError:
-            print('Вакансии с таким значением нет')
+        parameter = input('Введите значение: ')
+        json_saver.get_vacancy(parameter)
     elif answer == 'D':
-        try:
-            url = input('Введите url вакансии в формате <https://hh.ru/vacancy/123456>\n')
-            json_saver.delete_vacancy(url)
-        except ValueError:
-            print('Вакансии с таким url нет')
+        url = input('Введите url вакансии в формате <https://hh.ru/vacancy/123456>: ')
+        json_saver.delete_vacancy(url)
     top_n = int(input("Введите количество вакансий для вывода в топ N: "))
     filter_words = input("Введите ключевые слова для фильтрации вакансий: ").split()
     salary_range = int(input("Введите желаемую зарплату: "))
