@@ -49,15 +49,16 @@ class JSONSaver(Connector):
         data = {'vacancies': []}
 
         for vacancy in vacancies_list:
-            data['vacancies'].append({'name': vacancy.name,
-                                      'url': vacancy.url,
-                                      'salary': vacancy.salary,
-                                      'address': vacancy.address,
-                                      'requirement': vacancy.requirement,
-                                      'responsibility': vacancy.responsibility,
-                                      'work_format': vacancy.work_format,
-                                      'experience': vacancy.experience,
-                                      'employment': vacancy.employment})
+            if vacancy.address == ('Москва' or 'Адрес не указан') and vacancy.experience == 'Нет опыта':
+                data['vacancies'].append({'name': vacancy.name,
+                                          'url': vacancy.url,
+                                          'salary': vacancy.salary,
+                                          'address': vacancy.address,
+                                          'requirement': vacancy.requirement,
+                                          'responsibility': vacancy.responsibility,
+                                          'work_format': vacancy.work_format,
+                                          'experience': vacancy.experience,
+                                          'employment': vacancy.employment})
 
         with open("vacancies.json", "w+", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
@@ -79,7 +80,7 @@ class JSONSaver(Connector):
 
         new_data = vacancies_data['vacancies'].append(new_vacancy)
 
-        with open('vacancies.json', 'w+', encoding='utf-8') as file:
+        with open('vacancies.json', 'w', encoding='utf-8') as file:
             json.dump(new_data, file, ensure_ascii=False, indent=4)
 
     def get_vacancy(self, **kwargs):

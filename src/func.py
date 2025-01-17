@@ -16,7 +16,7 @@ def filter_vacancies(vacancies_list, filter_words):
         except AttributeError:
             responsibility = []
 
-        if (filter_words in (requirement and responsibility) and item.experience == 'Нет опыта' or 'От 1 года до 3 лет'
+        if (filter_words in (requirement and responsibility) and item.experience == 'Нет опыта'
                 and item.address == 'Москва'):
             data.append(item)
 
