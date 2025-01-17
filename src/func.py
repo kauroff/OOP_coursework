@@ -1,4 +1,4 @@
-def filter_vacancies(vacancies_list, filter_words):
+def filter_vacancies(vacancies_list: list, filter_words: list):
     """
     Функция, которая отбирает только подходящие по описанию вакансии
     :param vacancies_list: список объектов класса вакансий
@@ -7,23 +7,23 @@ def filter_vacancies(vacancies_list, filter_words):
     """
     data = []
     for item in vacancies_list:
-        try:
-            requirement = item.requirement.split()
-        except AttributeError:
-            requirement = []
-        try:
-            responsibility = item.responsibility.split()
-        except AttributeError:
-            responsibility = []
+        if item.address == ('Москва' or 'Адрес не указан') and item.experience == 'Нет опыта':
+            try:
+                requirement = item.requirement.split()
+            except AttributeError:
+                requirement = []
+            try:
+                responsibility = item.responsibility.split()
+            except AttributeError:
+                responsibility = []
 
-        if (filter_words in (requirement and responsibility) and item.experience == 'Нет опыта'
-                and item.address == 'Москва'):
-            data.append(item)
-
+            for word in filter_words:
+                if (word in (requirement + responsibility)) and (item not in data):
+                    data.append(item)
     return data
 
 
-def get_vacancies_by_salary(filtered_vacancies, salary_range):
+def get_vacancies_by_salary(filtered_vacancies: list, salary_range: int):
     """
     Функция, которая отбирает только подходящие по зарплате вакансии (и в т.ч. если зп не указана)
     :param filtered_vacancies: список объектов подходящих вакансий
@@ -37,7 +37,7 @@ def get_vacancies_by_salary(filtered_vacancies, salary_range):
     return data
 
 
-def sort_vacancies(ranged_vacancies):
+def sort_vacancies(ranged_vacancies: list):
     """
     Функция, которая сортирует подходящие вакансии по заработной плате
     :param ranged_vacancies: список объектов подходящих вакансий
@@ -52,7 +52,7 @@ def sort_vacancies(ranged_vacancies):
     return ranged_vacancies
 
 
-def get_top_vacancies(sorted_vacancies, top_n):
+def get_top_vacancies(sorted_vacancies: list, top_n: int):
     """
     Функция, которая показывает топ-н вакансий по заработной плате
     :param sorted_vacancies: отсортированный список объектов
@@ -62,7 +62,7 @@ def get_top_vacancies(sorted_vacancies, top_n):
     return sorted_vacancies[:top_n]
 
 
-def print_vacancies(top_vacancies):
+def print_vacancies(top_vacancies: list):
     """
     Функция, которая выводит результат в консоль
     :param top_vacancies: конечный результат
