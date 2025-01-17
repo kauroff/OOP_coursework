@@ -32,7 +32,7 @@ def get_vacancies_by_salary(filtered_vacancies: list, salary_range: int):
     """
     data = []
     for item in filtered_vacancies:
-        if int(salary_range) < item.salary:
+        if salary_range < item.salary:
             data.append(item)
     return data
 
