@@ -11,16 +11,16 @@ class Connector(ABC):
     def add_vacancy(self, vacancy):
         """
         Добавление вакансии
-        :param vacancy: обект класса
+        :param vacancy: объект класса
         :return: None
         """
         pass
 
     @abstractmethod
-    def get_vacancy(self, **kwargs):
+    def get_vacancy(self, parameter):
         """
         Получение вакансии из файла по указанным критериям
-        :param kwargs: необходимые критерии
+        :param parameter: необходимый критерий
         :return: Список вакансий
         """
         pass
@@ -61,7 +61,7 @@ class JSONSaver(Connector):
                                           'employment': vacancy.employment})
 
         with open("vacancies.json", "w+", encoding="utf-8") as file:
-            json.dump(data, file, ensure_ascii=False, indent=4)
+            json.dump(data, file)
 
     def add_vacancy(self, vacancy):
 
@@ -76,31 +76,31 @@ class JSONSaver(Connector):
                        'employment': vacancy.employment}
 
         with open('vacancies.json', 'r', encoding='utf-8') as file:
-            vacancies_data = json.load(file, ensure_ascii=False, indent=4)
+            vacancies_data = json.load(file)
 
         new_data = vacancies_data['vacancies'].append(new_vacancy)
 
         with open('vacancies.json', 'w', encoding='utf-8') as file:
-            json.dump(new_data, file, ensure_ascii=False, indent=4)
+            json.dump(new_data, file)
 
-    def get_vacancy(self, **kwargs):
+    def get_vacancy(self, parameter):
         with open('vacancies.json', 'r+', encoding='utf-8') as file:
-            vacancies_data = json.load(file, ensure_ascii=False, indent=4)
+            vacancies_data = json.load(file)
 
         for uniq_vacancy in vacancies_data['vacancies']:
-            if kwargs.values() in uniq_vacancy.values():
+            if parameter in uniq_vacancy.values():
                 return uniq_vacancy
 
     def delete_vacancy(self, url):
         with open('vacancies.json', 'r+', encoding='utf-8') as file:
-            vacancies_data = json.load(file, ensure_ascii=False, indent=4)
+            vacancies_data = json.load(file)
 
         for uniq_vacancy in vacancies_data['vacancies']:
             if uniq_vacancy['url'] == url:
                 del uniq_vacancy
 
         with open('vacancies.json', 'w+', encoding='utf-8') as file:
-            json.dump(vacancies_data, file, ensure_ascii=False, indent=4)
+            json.dump(vacancies_data, file)
 
 
 class ExcelSaver(Connector):

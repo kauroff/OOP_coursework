@@ -13,24 +13,31 @@ def user_interaction():
     vacancies_list = Vacancy.cast_to_object_list(hh_vacancies)
     json_saver = JSONSaver(vacancies_list)
     answer = input('''Если хотите добавить вакансию в файл - введите A
+    \nЕсли хотите получить вакансию из файла по указанному критерию - введите G
     \nЕсли хотите удалить вакансию из файла - введите D
     \nЕсли хотите продолжить работать с программой без изменений - нажмите enter\nВвод: ''')
+
     if answer == 'A':
         name, url, salary, address, requirement, responsibility, work_format, experience, employment = input(
             '''Введите вакансию для добавления в файл в формате: <Название вакансии>, <Ссылка на вакансию>, <Зарплата>,
             <Адрес>, <Требования>, <Обязанности>, <Формат работы>, <Опыт>, <График>:\n''').split(', ')
         vacancy = Vacancy(name, url, salary, address, requirement, responsibility, work_format, experience, employment)
         json_saver.add_vacancy(vacancy)
+    elif answer == 'G':
+        try:
+            parameter = input('Введите значение:\n')
+            json_saver.get_vacancy(parameter)
+        except ValueError:
+            print('Вакансии с таким значением нет')
     elif answer == 'D':
         try:
             url = input('Введите url вакансии в формате <https://hh.ru/vacancy/123456>\n')
             json_saver.delete_vacancy(url)
         except ValueError:
             print('Вакансии с таким url нет')
-
     top_n = int(input("Введите количество вакансий для вывода в топ N: "))
     filter_words = input("Введите ключевые слова для фильтрации вакансий: ").split()
-    salary_range = input("Введите желаемую зарплату: ")
+    salary_range = int(input("Введите желаемую зарплату: "))
 
     filtered_vacancies = filter_vacancies(vacancies_list, filter_words)
 
