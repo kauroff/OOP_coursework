@@ -1,6 +1,17 @@
 {
     "vacancies": [
         {
+            "name": "Intern Data Analyst / Стажер - аналитик данных",
+            "url": "https://hh.ru/vacancy/115748775",
+            "salary": 100000,
+            "address": "Москва",
+            "requirement": "Previous experience with some of the following tools would be considered an advantage: scientific or statistical computing (<highlighttext>Python</highlighttext>, R), SQL...",
+            "responsibility": "Demonstrate use of data visualization (Power BI, Excel), and analytic tools (<highlighttext>Python</highlighttext>, R, SQL, KNIME). Collaborate with multifunctional teams (Marketing...",
+            "work_format": "Формат не указан",
+            "experience": "Нет опыта",
+            "employment": "Полная занятость"
+        },
+        {
             "name": "Python-разработчик",
             "url": "https://hh.ru/vacancy/115688042",
             "salary": 60000,
@@ -12,12 +23,12 @@
             "employment": "Полная занятость"
         },
         {
-            "name": "Intern Data Analyst / Стажер - аналитик данных",
-            "url": "https://hh.ru/vacancy/115748775",
-            "salary": 100000,
+            "name": "Backend разработчик (Python FastAPI)",
+            "url": "https://hh.ru/vacancy/115551495",
+            "salary": 0,
             "address": "Москва",
-            "requirement": "Previous experience with some of the following tools would be considered an advantage: scientific or statistical computing (<highlighttext>Python</highlighttext>, R), SQL...",
-            "responsibility": "Demonstrate use of data visualization (Power BI, Excel), and analytic tools (<highlighttext>Python</highlighttext>, R, SQL, KNIME). Collaborate with multifunctional teams (Marketing...",
+            "requirement": "Знания и опыт в профильных технологиях: <highlighttext>Python</highlighttext>, FastAPI, SQLalchemy, Pytest. Kafka (теоретические знания о технологии). Готовность ездить в офис. ",
+            "responsibility": "<highlighttext>Python</highlighttext> 3.10+, FastAPI/Litestar, SQLAlchemy, Kafka, Redis, Pytest. Придерживаемся архитектурных стандартов: Clean Architecture, Event Driven Architecture. ",
             "work_format": "Формат не указан",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
@@ -34,23 +45,23 @@
             "employment": "Полная занятость"
         },
         {
-            "name": "Backend разработчик (Python FastAPI)",
-            "url": "https://hh.ru/vacancy/115551495",
-            "salary": 0,
-            "address": "Москва",
-            "requirement": "Знания и опыт в профильных технологиях: <highlighttext>Python</highlighttext>, FastAPI, SQLalchemy, Pytest. Kafka (теоретические знания о технологии). Готовность ездить в офис. ",
-            "responsibility": "<highlighttext>Python</highlighttext> 3.10+, FastAPI/Litestar, SQLAlchemy, Kafka, Redis, Pytest. Придерживаемся архитектурных стандартов: Clean Architecture, Event Driven Architecture. ",
-            "work_format": "Формат не указан",
-            "experience": "Нет опыта",
-            "employment": "Полная занятость"
-        },
-        {
             "name": "Python/Django Junior Backend-разработчик",
             "url": "https://hh.ru/vacancy/115417242",
             "salary": 60000,
             "address": "Москва",
             "requirement": "Наличие примеров работ в git. Опыт работы с асинхронным <highlighttext>python</highlighttext>. Опыт деплоя проектов. Опыт работы с celery, redis, docker, supervisor.",
             "responsibility": "Участвовать в проектировании базы данных. Создавать интеграции с внешними сервисами. Дорабатывать существующие скрипты. Писать SQL-запросы. Разрабатывать админку и REST...",
+            "work_format": "Формат не указан",
+            "experience": "Нет опыта",
+            "employment": "Полная занятость"
+        },
+        {
+            "name": "Стажер (IT и аналитика)",
+            "url": "https://hh.ru/vacancy/115594003",
+            "salary": 90000,
+            "address": "Москва",
+            "requirement": "Высшее образование или в том числе студенты последних курсов по специальностям: статистика, математика, экономика, IT, с возможностью работать полный рабочий...",
+            "responsibility": "Выполнение функций по документообороту. Выгрузка отчетов в 1С. Полный цикл ведения контрактов с аптечными сетями и производителями. ",
             "work_format": "Формат не указан",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
@@ -63,17 +74,6 @@
             "requirement": "Высшее или неоконченное высшее образование в области математики, информатики или смежных дисциплин. Хороший уровень <highlighttext>Python</highlighttext> (ООП; знания паттернов проектирования и...",
             "responsibility": "Разработка методологий и архитектур для ML/DL. Разработка нейросетевых модулей на языке <highlighttext>Python</highlighttext>. Поддержка текущих алгоритмических решений. Покрытие кода unit...",
             "work_format": "На месте работодателя",
-            "experience": "Нет опыта",
-            "employment": "Полная занятость"
-        },
-        {
-            "name": "Стажер (IT и аналитика)",
-            "url": "https://hh.ru/vacancy/115594003",
-            "salary": 90000,
-            "address": "Москва",
-            "requirement": "Высшее образование или в том числе студенты последних курсов по специальностям: статистика, математика, экономика, IT, с возможностью работать полный рабочий...",
-            "responsibility": "Выполнение функций по документообороту. Выгрузка отчетов в 1С. Полный цикл ведения контрактов с аптечными сетями и производителями. ",
-            "work_format": "Формат не указан",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
         },
@@ -111,17 +111,6 @@
             "employment": "Полная занятость"
         },
         {
-            "name": "Junior Data Analyst",
-            "url": "https://hh.ru/vacancy/115523740",
-            "salary": 0,
-            "address": "Москва",
-            "requirement": "Что будет плюсом. - Знание SQL и PL/SQL. - Знание R или <highlighttext>Python</highlighttext>, пакетов статистического анализа. - Знание теории вероятности и математической...",
-            "responsibility": "Построением математических моделей страхового портфеля. - Исследованием спроса и эластичности. - Управленческой аналитикой. - Тарификацией. - Анализом рентабельности страховых продуктов. - Возможность освоить и применять...",
-            "work_format": "Формат не указан",
-            "experience": "Нет опыта",
-            "employment": "Полная занятость"
-        },
-        {
             "name": "Стажер / Младший специалист по нагрузочному тестированию",
             "url": "https://hh.ru/vacancy/115748629",
             "salary": 0,
@@ -129,6 +118,17 @@
             "requirement": "Базовые знания SQL. Базовые знание языков программирования (Java, <highlighttext>python</highlighttext> и т.д.). Понимание REST, SOAP, XML, JSON. Понимание принципов ООП. ",
             "responsibility": null,
             "work_format": "Удалённо",
+            "experience": "Нет опыта",
+            "employment": "Полная занятость"
+        },
+        {
+            "name": "Junior Data Analyst",
+            "url": "https://hh.ru/vacancy/115523740",
+            "salary": 0,
+            "address": "Москва",
+            "requirement": "Что будет плюсом. - Знание SQL и PL/SQL. - Знание R или <highlighttext>Python</highlighttext>, пакетов статистического анализа. - Знание теории вероятности и математической...",
+            "responsibility": "Построением математических моделей страхового портфеля. - Исследованием спроса и эластичности. - Управленческой аналитикой. - Тарификацией. - Анализом рентабельности страховых продуктов. - Возможность освоить и применять...",
+            "work_format": "Формат не указан",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
         },
@@ -188,17 +188,6 @@
             "employment": "Частичная занятость"
         },
         {
-            "name": "Аналитик",
-            "url": "https://hh.ru/vacancy/115754420",
-            "salary": 0,
-            "address": "Москва",
-            "requirement": "Опыт работы со специализированными программами для анализа данных (например, SPSS), опыт анализа данных на <highlighttext>Python</highlighttext> / R-Studio будет преимуществом. ",
-            "responsibility": "Анализ данных и подготовка аналитических отчетов для Министерства труда. Проведение регулярных мониторингов демографической ситуации, реализации демографических программ. Участие в проведении...",
-            "work_format": "На месте работодателя",
-            "experience": "Нет опыта",
-            "employment": "Полная занятость"
-        },
-        {
             "name": "Data Engineer (Инженер данных)",
             "url": "https://hh.ru/vacancy/115642653",
             "salary": 120000,
@@ -206,6 +195,17 @@
             "requirement": "Опыт работы с ETL-процессами и мониторингом интеграционных пайплайнов. Уверенные навыки работы с <highlighttext>Python</highlighttext>, опыт работы с библиотеками для обработки...",
             "responsibility": "Разработка, обновление и поддержка пайплайнов для очистки, стандартизации и интеграции данных от партнеров. Мониторинг и поддержка процесса интеграции данных, исправление...",
             "work_format": "Формат не указан",
+            "experience": "Нет опыта",
+            "employment": "Полная занятость"
+        },
+        {
+            "name": "Аналитик",
+            "url": "https://hh.ru/vacancy/115754420",
+            "salary": 0,
+            "address": "Москва",
+            "requirement": "Опыт работы со специализированными программами для анализа данных (например, SPSS), опыт анализа данных на <highlighttext>Python</highlighttext> / R-Studio будет преимуществом. ",
+            "responsibility": "Анализ данных и подготовка аналитических отчетов для Министерства труда. Проведение регулярных мониторингов демографической ситуации, реализации демографических программ. Участие в проведении...",
+            "work_format": "На месте работодателя",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
         },
@@ -331,6 +331,17 @@
             "employment": "Полная занятость"
         },
         {
+            "name": "Инженер технической поддержки (NOC)",
+            "url": "https://hh.ru/vacancy/115724144",
+            "salary": 80000,
+            "address": "Москва",
+            "requirement": "Опыт работы с CLI Juniper/Cisco/Huawei. Представление о EVPN/VXLAN/MPLS. Знакомство с Linux. Умение/желание программировать на <highlighttext>Python</highlighttext>...",
+            "responsibility": "Обработка клиентских обращений в основном по e-mail, реже по телефонии, в мессенджерах. Траблшутинг каналов - своих и арендованных. ",
+            "work_format": "Гибрид",
+            "experience": "Нет опыта",
+            "employment": "Полная занятость"
+        },
+        {
             "name": "Аналитик данных ТЕРМОЛЭНД",
             "url": "https://hh.ru/vacancy/115529280",
             "salary": 0,
@@ -353,12 +364,12 @@
             "employment": "Полная занятость"
         },
         {
-            "name": "Инженер технической поддержки (NOC)",
-            "url": "https://hh.ru/vacancy/115724144",
-            "salary": 80000,
+            "name": "Стажер в Perfomance отдел / Perfomance Intern",
+            "url": "https://hh.ru/vacancy/114926527",
+            "salary": 0,
             "address": "Москва",
-            "requirement": "Опыт работы с CLI Juniper/Cisco/Huawei. Представление о EVPN/VXLAN/MPLS. Знакомство с Linux. Умение/желание программировать на <highlighttext>Python</highlighttext>...",
-            "responsibility": "Обработка клиентских обращений в основном по e-mail, реже по телефонии, в мессенджерах. Траблшутинг каналов - своих и арендованных. ",
+            "requirement": "Уверенный пользователь PowerPoint и Excel. Знаешь <highlighttext>Python</highlighttext>. Умеешь критически мыслить, ответственный, нацеленный на результат, инициативный и проактивный. Знаешь английский не...",
+            "responsibility": "Участие в разработке продуктов автоматизации для Performance департамента. Взаимодействие с командой для решения текущих задач. Внедрение решений для оптимизации процессов...",
             "work_format": "Гибрид",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
@@ -371,17 +382,6 @@
             "requirement": "Анализировать основные методы и инструменты, а также выделять текущие тренды по киберугрозам. Имеешь высшее образование в области защиты информации, информационных...",
             "responsibility": "Компания F.A.C.C.T. (Fight Against Cybercrime Technologies) — российский разработчик технологий для борьбы с киберпреступлениями, поставщик решений для...",
             "work_format": "Формат не указан",
-            "experience": "Нет опыта",
-            "employment": "Полная занятость"
-        },
-        {
-            "name": "Стажер в Perfomance отдел / Perfomance Intern",
-            "url": "https://hh.ru/vacancy/114926527",
-            "salary": 0,
-            "address": "Москва",
-            "requirement": "Уверенный пользователь PowerPoint и Excel. Знаешь <highlighttext>Python</highlighttext>. Умеешь критически мыслить, ответственный, нацеленный на результат, инициативный и проактивный. Знаешь английский не...",
-            "responsibility": "Участие в разработке продуктов автоматизации для Performance департамента. Взаимодействие с командой для решения текущих задач. Внедрение решений для оптимизации процессов...",
-            "work_format": "Гибрид",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
         },
@@ -408,6 +408,17 @@
             "employment": "Полная занятость"
         },
         {
+            "name": "Аналитик (Правительство Москвы)",
+            "url": "https://hh.ru/vacancy/106825731",
+            "salary": 60000,
+            "address": "Москва",
+            "requirement": "Экспертное владение Excel. (VBA, power query, формулы массивов - как преимущество). Владение <highlighttext>Python</highlighttext> для анализа данных (библиотека pandas) - как преимущество. ",
+            "responsibility": "Поиск, структурирование и анализ текстовой информации. Количественный анализ данных в Excel. Систематизация и статистическая обработка поступающей информации. Написание отчетов и...",
+            "work_format": "Формат не указан",
+            "experience": "Нет опыта",
+            "employment": "Полная занятость"
+        },
+        {
             "name": "Data Engineering Intern / Стажер дата-инженер",
             "url": "https://hh.ru/vacancy/107950092",
             "salary": 100000,
@@ -417,17 +428,6 @@
             "work_format": "Формат не указан",
             "experience": "Нет опыта",
             "employment": "Стажировка"
-        },
-        {
-            "name": "Специалист технической поддержки",
-            "url": "https://hh.ru/vacancy/115705023",
-            "salary": 100000,
-            "address": "Москва",
-            "requirement": "Знание английского языка на уровне B2. Хорошие коммуникативные навыки. Уверенное владение компьютером. Ориентированность на клиента, ответственность. Способность работать в...",
-            "responsibility": "Самостоятельное изучение технических проблем в маршрутизации трафика по письменным запросам клиентов, определение и устранение их причин, поиск временных и постоянных...",
-            "work_format": "Формат не указан",
-            "experience": "Нет опыта",
-            "employment": "Полная занятость"
         },
         {
             "name": "Младший системный администратор",
@@ -452,23 +452,23 @@
             "employment": "Полная занятость"
         },
         {
+            "name": "Специалист технической поддержки",
+            "url": "https://hh.ru/vacancy/115705023",
+            "salary": 100000,
+            "address": "Москва",
+            "requirement": "Знание английского языка на уровне B2. Хорошие коммуникативные навыки. Уверенное владение компьютером. Ориентированность на клиента, ответственность. Способность работать в...",
+            "responsibility": "Самостоятельное изучение технических проблем в маршрутизации трафика по письменным запросам клиентов, определение и устранение их причин, поиск временных и постоянных...",
+            "work_format": "Формат не указан",
+            "experience": "Нет опыта",
+            "employment": "Полная занятость"
+        },
+        {
             "name": "Аналитик",
             "url": "https://hh.ru/vacancy/112337113",
             "salary": 85000,
             "address": "Москва",
             "requirement": "Свободное владение MS Excel, VBA , <highlighttext>Python</highlighttext>, SQL, API . Знания по выстраиванию ETL процессов. Развитое логическое мышление. Творческий подход к решению...",
             "responsibility": "Разработка ETL-процессов (sql, <highlighttext>python</highlighttext>, vba). Разработка витрин данных. Участие в разработке архитектуры БД. Оптимизация запросов SQL. Ведение модели данных. ",
-            "work_format": "На месте работодателя",
-            "experience": "Нет опыта",
-            "employment": "Полная занятость"
-        },
-        {
-            "name": "Сетевой инженер",
-            "url": "https://hh.ru/vacancy/115432176",
-            "salary": 0,
-            "address": "Москва",
-            "requirement": "Опыт эксплуатации систем управления и мониторинга сети. Навыки работы со скриптами (<highlighttext>python</highlighttext>, bash). Интерес к современным сетевым технологиям. ",
-            "responsibility": "Развертывание проводной и беспроводной сети в офисах нового формата Phygital. Обеспечение бесперебойной работы сети удаленных офисов Банка, устранение инцидентов в...",
             "work_format": "На месте работодателя",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
@@ -485,12 +485,34 @@
             "employment": "Полная занятость"
         },
         {
+            "name": "Сетевой инженер",
+            "url": "https://hh.ru/vacancy/115432176",
+            "salary": 0,
+            "address": "Москва",
+            "requirement": "Опыт эксплуатации систем управления и мониторинга сети. Навыки работы со скриптами (<highlighttext>python</highlighttext>, bash). Интерес к современным сетевым технологиям. ",
+            "responsibility": "Развертывание проводной и беспроводной сети в офисах нового формата Phygital. Обеспечение бесперебойной работы сети удаленных офисов Банка, устранение инцидентов в...",
+            "work_format": "На месте работодателя",
+            "experience": "Нет опыта",
+            "employment": "Полная занятость"
+        },
+        {
             "name": "Стажёр",
             "url": "https://hh.ru/vacancy/113851449",
             "salary": 80000,
             "address": "Москва",
             "requirement": "Опыт работы с некоторыми из следующих инструментов: научные или статистические вычисления (<highlighttext>Python</highlighttext>, R), SQL и экосистема больших данных, инструменты бизнес...",
             "responsibility": "Описывать схемы и построения схем бизнес-процессов, подготавливать и собирать функциональные требования для автоматизации бизнес-процессов. Анализировать и собирать данные...",
+            "work_format": "Формат не указан",
+            "experience": "Нет опыта",
+            "employment": "Полная занятость"
+        },
+        {
+            "name": "Программист-разработчик",
+            "url": "https://hh.ru/vacancy/106310498",
+            "salary": 0,
+            "address": "Москва",
+            "requirement": "Навыки работы с системами управления проектами и задачами. Владение программами: Знание <highlighttext>Python</highlighttext> и его популярных фреймворков (например, Django, Flask, FastAPI). ",
+            "responsibility": "Разработка и поддержка back-end решений с использованием языка <highlighttext>Python</highlighttext>. Создание и поддержка серверной логики для приложений и систем в...",
             "work_format": "Формат не указан",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
@@ -514,17 +536,6 @@
             "requirement": "Знание <highlighttext>python</highlighttext> + sql. Аналитический склад ума. Грамотная письменная и устная речь. Внимательность к деталям.",
             "responsibility": "Прослушивание и оценка звонков для контроля качества и улучшения процессов. Формирование базы данных для обучения и совершенствования нейросетевых моделей. ",
             "work_format": "На месте работодателя",
-            "experience": "Нет опыта",
-            "employment": "Полная занятость"
-        },
-        {
-            "name": "Программист-разработчик",
-            "url": "https://hh.ru/vacancy/106310498",
-            "salary": 0,
-            "address": "Москва",
-            "requirement": "Навыки работы с системами управления проектами и задачами. Владение программами: Знание <highlighttext>Python</highlighttext> и его популярных фреймворков (например, Django, Flask, FastAPI). ",
-            "responsibility": "Разработка и поддержка back-end решений с использованием языка <highlighttext>Python</highlighttext>. Создание и поддержка серверной логики для приложений и систем в...",
-            "work_format": "Формат не указан",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
         },
@@ -562,12 +573,34 @@
             "employment": "Полная занятость"
         },
         {
+            "name": "Data Scientist (Управление координации стратегических проектов по фондированию и лояльности)",
+            "url": "https://hh.ru/vacancy/108836383",
+            "salary": 0,
+            "address": "Москва",
+            "requirement": "Знания в области машинного обучения и анализа данных (особенно Таbular и Time Series). <highlighttext>Python</highlighttext>: стандартный DS стек + базовые принципы...",
+            "responsibility": "Разработка разнообразных моделей и признаков (анализ клиентской базы, эластичности спроса). Мониторинг качества моделей, проведение бэк-тестов. При необходимости - написание методологии. ",
+            "work_format": "Формат не указан",
+            "experience": "Нет опыта",
+            "employment": "Полная занятость"
+        },
+        {
             "name": "Ассистент менеджера",
             "url": "https://hh.ru/vacancy/110988675",
             "salary": 0,
             "address": "Москва",
             "requirement": "Уверенный пользователь MS Office (Word, Excel, PP). Базовые знания <highlighttext>Python</highlighttext>, SQL (или желание и способность к их изучению). ",
             "responsibility": "Коммуникация с внешними клиентами и сотрудниками компании. Поддержка и консультация клиентов по вопросам работы с данными. Выгрузка данных из баз...",
+            "work_format": "Формат не указан",
+            "experience": "Нет опыта",
+            "employment": "Полная занятость"
+        },
+        {
+            "name": "Project manager/ Менеджер проектов",
+            "url": "https://hh.ru/vacancy/111903298",
+            "salary": 0,
+            "address": "Москва",
+            "requirement": "Имеешь базовые навыки HTML/CSS. Работал с языком программирования (у нас JS/<highlighttext>Python</highlighttext> или PHP). Умеешь работать с Яндекс метрикой...",
+            "responsibility": "Вести проекты по направлению Digital-маркетинга (Сайты, SEO, администрирование CRM и т.п.). Контролировать сроки и качество выполнения проектов. ",
             "work_format": "Формат не указан",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
@@ -584,35 +617,13 @@
             "employment": "Полная занятость"
         },
         {
-            "name": "Project manager/ Менеджер проектов",
-            "url": "https://hh.ru/vacancy/111903298",
+            "name": "Стажер IT",
+            "url": "https://hh.ru/vacancy/112778206",
             "salary": 0,
             "address": "Москва",
-            "requirement": "Имеешь базовые навыки HTML/CSS. Работал с языком программирования (у нас JS/<highlighttext>Python</highlighttext> или PHP). Умеешь работать с Яндекс метрикой...",
-            "responsibility": "Вести проекты по направлению Digital-маркетинга (Сайты, SEO, администрирование CRM и т.п.). Контролировать сроки и качество выполнения проектов. ",
+            "requirement": "Аналитический склад ума, ответственность, исполнительность. Знания языков программирования: VBA, SQL, <highlighttext>Python</highlighttext>, C++, C#.",
+            "responsibility": "Участие в поддержке, настройке и разработке системы TDM Navigator.",
             "work_format": "Формат не указан",
-            "experience": "Нет опыта",
-            "employment": "Полная занятость"
-        },
-        {
-            "name": "Data Scientist (Управление координации стратегических проектов по фондированию и лояльности)",
-            "url": "https://hh.ru/vacancy/108836383",
-            "salary": 0,
-            "address": "Москва",
-            "requirement": "Знания в области машинного обучения и анализа данных (особенно Таbular и Time Series). <highlighttext>Python</highlighttext>: стандартный DS стек + базовые принципы...",
-            "responsibility": "Разработка разнообразных моделей и признаков (анализ клиентской базы, эластичности спроса). Мониторинг качества моделей, проведение бэк-тестов. При необходимости - написание методологии. ",
-            "work_format": "Формат не указан",
-            "experience": "Нет опыта",
-            "employment": "Полная занятость"
-        },
-        {
-            "name": "BI Junior analyst",
-            "url": "https://hh.ru/vacancy/115679812",
-            "salary": 0,
-            "address": "Москва",
-            "requirement": "Знание любого процедурного расширения языка SQL. Знание <highlighttext>Python</highlighttext>/R. Знание принципов работы интерфейсов (API). Технический английский язык/ Intermediate. ",
-            "responsibility": "Анализ текущего решения и совершенствование работы BI систем. Написание процедур и алгоритмов обработки данных. Разработка алгоритмов машинного обучения для текущих...",
-            "work_format": "Гибрид",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
         },
@@ -628,13 +639,13 @@
             "employment": "Полная занятость"
         },
         {
-            "name": "Стажер IT",
-            "url": "https://hh.ru/vacancy/112778206",
+            "name": "BI Junior analyst",
+            "url": "https://hh.ru/vacancy/115679812",
             "salary": 0,
             "address": "Москва",
-            "requirement": "Аналитический склад ума, ответственность, исполнительность. Знания языков программирования: VBA, SQL, <highlighttext>Python</highlighttext>, C++, C#.",
-            "responsibility": "Участие в поддержке, настройке и разработке системы TDM Navigator.",
-            "work_format": "Формат не указан",
+            "requirement": "Знание любого процедурного расширения языка SQL. Знание <highlighttext>Python</highlighttext>/R. Знание принципов работы интерфейсов (API). Технический английский язык/ Intermediate. ",
+            "responsibility": "Анализ текущего решения и совершенствование работы BI систем. Написание процедур и алгоритмов обработки данных. Разработка алгоритмов машинного обучения для текущих...",
+            "work_format": "Гибрид",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
         },
@@ -668,6 +679,17 @@
             "requirement": "Знание <highlighttext>Python</highlighttext>: работа с pandas, requests, sqlalchemy (или специфичными библиотеками для конкретных БД, напр. vertica-<highlighttext>python</highlighttext>) - будет преимуществом. ",
             "responsibility": "Полный цикл создания отчетов для BI-систем: Сбор и формализация бизнес-требований. Изучение источников данных (Vertica, Clickhouse). Формирование и подготовка...",
             "work_format": "Формат не указан",
+            "experience": "Нет опыта",
+            "employment": "Полная занятость"
+        },
+        {
+            "name": "Младший инженер-тестировщик (Офис)",
+            "url": "https://hh.ru/vacancy/110336628",
+            "salary": 0,
+            "address": "Москва",
+            "requirement": "Понимание процесса тестирования, роли тестировщика в команде, знание теории тестирования. Базовые знания <highlighttext>Python</highlighttext>. Опыт работы с ADB. Знание SQL на...",
+            "responsibility": "Фиксация обнаруженных дефектов в баг-трекере (Jira). Верификация и валидация исправленных дефектов. Тест-анализ, работа с аналитикой, техническими и бизнес...",
+            "work_format": "На месте работодателя",
             "experience": "Нет опыта",
             "employment": "Полная занятость"
         },
