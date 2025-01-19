@@ -7,7 +7,7 @@ def filter_vacancies(vacancies_list: list, filter_words: list):
     """
     data = []
     for item in vacancies_list:
-        if item.address == ('Москва' or 'Адрес не указан') and item.experience == 'Нет опыта':
+        if (item.address == 'Москва' or 'Адрес не указан') and item.experience == 'Нет опыта':
             try:
                 requirement = item.requirement.split()
             except AttributeError:
