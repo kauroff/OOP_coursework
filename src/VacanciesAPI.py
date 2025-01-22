@@ -18,6 +18,9 @@ class HeadHunterAPI(Parser):
     """
 
     def __init__(self):
+        """
+        Метод инициализации для запроса по API
+        """
         self.url = 'https://api.hh.ru/vacancies'
         self.headers = {'User-Agent': 'HH-User-Agent'}
         self.params = {'text': '', 'page': 0, 'per_page': 100}
@@ -45,6 +48,18 @@ class Vacancy:
 
     def __init__(self, name, url, salary, address, requirement, responsibility, work_format, experience,
                  employment):
+        """
+        Метод инициализации вакансии
+        :param name: название вакансии
+        :param url: ссылка на вакансию
+        :param salary: уровень з/п
+        :param address: город
+        :param requirement: требования
+        :param responsibility: обязанности
+        :param work_format: формат работы
+        :param experience: опыт
+        :param employment: рабочий день
+        """
         self.name = name
         self.url = f'https://hh.ru/vacancy/{url}'
         self.salary = salary
