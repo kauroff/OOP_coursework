@@ -40,12 +40,27 @@ class JSONSaver(Connector):
     Сохранение информации о вакансиях в JSON-файл
     """
 
-    def __init__(self, vacancies_list):
+    def __init__(self, filename='vacancies'):
         """
         Метод инициализации для записи вакансий в JSON-файл
+        :param filename: название файла
+        """
+        self.__filename = filename
+
+    def get_info(self):
+        """
+        Метод для получения данных из файла
+        :return: JSON-словарь со всеми вакансиями
+        """
+        with open(f'{self.__filename}.json', 'r', encoding='utf-8') as file:
+            data = json.load(file)
+        return data
+
+    def add_info(self, vacancies_list):
+        """
+        Метод для записи вакансий в JSON-файл
         :param vacancies_list: список вакансий
         """
-        self.vacancies_list = vacancies_list
         data = {'vacancies': []}
 
         for vacancy in vacancies_list:
@@ -60,7 +75,16 @@ class JSONSaver(Connector):
                                           'experience': vacancy.experience,
                                           'employment': vacancy.employment})
 
-        with open("vacancies.json", "w+", encoding="utf-8") as file:
+        with open(f'{self.__filename}.json', "w+", encoding="utf-8") as file:
+            json.dump(data, file, ensure_ascii=False)
+
+    def delete_info(self):
+        """
+        Метод для удаления данных из файла
+        :return: None
+        """
+        data = ''
+        with open(f'{self.__filename}.json', "w+", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False)
 
     def add_vacancy(self, vacancy):
@@ -75,16 +99,16 @@ class JSONSaver(Connector):
                        'experience': vacancy.experience,
                        'employment': vacancy.employment}
 
-        with open('vacancies.json', 'r', encoding='utf-8') as file:
+        with open(f'{self.__filename}.json', 'r', encoding='utf-8') as file:
             vacancies_data = json.load(file)
 
         vacancies_data['vacancies'].append(new_vacancy)
 
-        with open('vacancies.json', 'w', encoding='utf-8') as file:
+        with open(f'{self.__filename}.json', 'w', encoding='utf-8') as file:
             json.dump(vacancies_data, file, ensure_ascii=False)
 
     def get_vacancy(self, parameter):
-        with open('vacancies.json', 'r', encoding='utf-8') as file:
+        with open(f'{self.__filename}.json', 'r', encoding='utf-8') as file:
             vacancies_data = json.load(file)
 
         for uniq_vacancy in vacancies_data['vacancies']:
@@ -105,7 +129,7 @@ class JSONSaver(Connector):
                 print('Вакансии с таким значением нет')
 
     def delete_vacancy(self, url):
-        with open('vacancies.json', 'r', encoding='utf-8') as file:
+        with open(f'{self.__filename}.json', 'r', encoding='utf-8') as file:
             vacancies_data = json.load(file)
 
         flag = False
@@ -117,7 +141,7 @@ class JSONSaver(Connector):
         if not flag:
             print('Вакансии с таким url нет')
 
-        with open('vacancies.json', 'w+', encoding='utf-8') as file:
+        with open(f'{self.__filename}.json', 'w+', encoding='utf-8') as file:
             json.dump(vacancies_data, file, ensure_ascii=False)
 
 
