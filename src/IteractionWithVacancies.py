@@ -81,13 +81,16 @@ class JSONSaver(Connector):
     def delete_info(self):
         """
         Метод для удаления данных из файла
-        :return: None
         """
         data = ''
         with open(f'{self.__filename}.json', "w+", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False)
 
     def add_vacancy(self, vacancy):
+        """
+        Метод для добавления вакансии в файл
+        :param vacancy: объект класса вакансии
+        """
 
         new_vacancy = {'name': vacancy.name,
                        'url': vacancy.url,
@@ -108,27 +111,46 @@ class JSONSaver(Connector):
             json.dump(vacancies_data, file, ensure_ascii=False)
 
     def get_vacancy(self, parameter):
+        """
+        Метод для получения вакансии по заданному параметру
+        :param parameter: заданный параметр
+        :return: вакансия или ответ об ее отсутствии
+        """
         with open(f'{self.__filename}.json', 'r', encoding='utf-8') as file:
             vacancies_data = json.load(file)
 
         for uniq_vacancy in vacancies_data['vacancies']:
             if parameter in uniq_vacancy.values():
-                print()
-                print('Вот, что удалось найти:')
-                print(uniq_vacancy['name'])
-                print(uniq_vacancy['url'])
-                print(uniq_vacancy['salary'])
-                print(uniq_vacancy['address'])
-                print(uniq_vacancy['requirement'])
-                print(uniq_vacancy['responsibility'])
-                print(uniq_vacancy['work_format'])
-                print(uniq_vacancy['experience'])
-                print(uniq_vacancy['employment'])
-                print()
+                name = uniq_vacancy['name']
+                url = uniq_vacancy['url']
+                salary = uniq_vacancy['salary']
+                address = uniq_vacancy['address']
+                requirement = uniq_vacancy['requirement']
+                responsibility = uniq_vacancy['responsibility']
+                work_format = uniq_vacancy['work_format']
+                experience = uniq_vacancy['experience']
+                employment = uniq_vacancy['employment']
+                return f"""\n
+                Вот, что удалось найти:\n
+                {name}\n
+                {url}\n
+                {salary}\n
+                {address}\n
+                {requirement}\n
+                {responsibility}\n
+                {work_format}\n
+                {experience}\n
+                {employment}\n
+                """
             else:
-                print('Вакансии с таким значением нет')
+                return 'Вакансии с таким значением нет'
 
     def delete_vacancy(self, url):
+        """
+        Метод для удаления вакансии из файла
+        :param url: параметр для поиска вакансии в файле
+        :return: сообщение об окончании
+        """
         with open(f'{self.__filename}.json', 'r', encoding='utf-8') as file:
             vacancies_data = json.load(file)
 
@@ -136,13 +158,15 @@ class JSONSaver(Connector):
         for uniq_vacancy in vacancies_data['vacancies']:
             if url == uniq_vacancy['url']:
                 vacancies_data['vacancies'].remove(uniq_vacancy)
-                print('Вакансия успешно удалена')
                 flag = True
-        if not flag:
-            print('Вакансии с таким url нет')
 
         with open(f'{self.__filename}.json', 'w+', encoding='utf-8') as file:
             json.dump(vacancies_data, file, ensure_ascii=False)
+
+        if flag:
+            return 'Вакансия успешно удалена'
+        else:
+            return 'Вакансии с таким url нет'
 
 
 class ExcelSaver(Connector):
