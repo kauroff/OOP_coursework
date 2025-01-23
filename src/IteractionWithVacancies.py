@@ -58,13 +58,20 @@ class JSONSaver(Connector):
 
     def add_info(self, vacancies_list):
         """
-        Метод для записи вакансий в JSON-файл
+        Метод для записи вакансий в JSON-файл с валидацией данных
         :param vacancies_list: список вакансий
         """
         data = {'vacancies': []}
 
         for vacancy in vacancies_list:
-            if vacancy.address == ('Москва' or 'Адрес не указан') and vacancy.experience == 'Нет опыта':
+            if (vacancy.address == ('Москва' or 'Адрес не указан') and
+                    (vacancy.experience == 'Нет опыта') and
+                    (vacancy.salary is int and not None) and ((vacancy.name,
+                                                               vacancy.url,
+                                                               vacancy.requirement,
+                                                               vacancy.responsibility,
+                                                               vacancy.work_format,
+                                                               vacancy.employment) is str and not None)):
                 data['vacancies'].append({'name': vacancy.name,
                                           'url': vacancy.url,
                                           'salary': vacancy.salary,
