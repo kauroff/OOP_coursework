@@ -56,31 +56,43 @@ class JSONSaver(Connector):
             data = json.load(file)
         return data
 
-    def add_info(self, vacancies_list):
+    @staticmethod
+    def __valid(vacancies_list: list):
+        """
+        Метод для валидации данных
+        :param vacancies_list: список объектов вакансий
+        :return: список словарей вакансий
+        """
+        data = []
+
+        for vacancy in vacancies_list:
+            if (vacancy.__address == ('Москва' or 'Адрес не указан') and
+                    (vacancy.__experience == 'Нет опыта') and
+                    (vacancy.__salary is int and not None) and ((vacancy.__name,
+                                                                 vacancy.__url,
+                                                                 vacancy.__requirement,
+                                                                 vacancy.__responsibility,
+                                                                 vacancy.__work_format,
+                                                                 vacancy.__employment) is str and not None)):
+                data.append({'name': vacancy.name,
+                             'url': vacancy.url,
+                             'salary': vacancy.salary,
+                             'address': vacancy.address,
+                             'requirement': vacancy.requirement,
+                             'responsibility': vacancy.responsibility,
+                             'work_format': vacancy.work_format,
+                             'experience': vacancy.experience,
+                             'employment': vacancy.employment})
+        return data
+
+    def add_info(self, vacancies_list: list):
         """
         Метод для записи вакансий в JSON-файл с валидацией данных
-        :param vacancies_list: список вакансий
+        :param vacancies_list: список объектов вакансий
         """
         data = {'vacancies': []}
 
-        for vacancy in vacancies_list:
-            if (vacancy.address == ('Москва' or 'Адрес не указан') and
-                    (vacancy.experience == 'Нет опыта') and
-                    (vacancy.salary is int and not None) and ((vacancy.name,
-                                                               vacancy.url,
-                                                               vacancy.requirement,
-                                                               vacancy.responsibility,
-                                                               vacancy.work_format,
-                                                               vacancy.employment) is str and not None)):
-                data['vacancies'].append({'name': vacancy.name,
-                                          'url': vacancy.url,
-                                          'salary': vacancy.salary,
-                                          'address': vacancy.address,
-                                          'requirement': vacancy.requirement,
-                                          'responsibility': vacancy.responsibility,
-                                          'work_format': vacancy.work_format,
-                                          'experience': vacancy.experience,
-                                          'employment': vacancy.employment})
+        data['vacancies'].extend(JSONSaver.__valid(vacancies_list))
 
         with open(f'{self.__filename}.json', "w+", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False)
@@ -98,21 +110,10 @@ class JSONSaver(Connector):
         Метод для добавления вакансии в файл
         :param vacancy: объект класса вакансии
         """
-
-        new_vacancy = {'name': vacancy.name,
-                       'url': vacancy.url,
-                       'salary': vacancy.salary,
-                       'address': vacancy.address,
-                       'requirement': vacancy.requirement,
-                       'responsibility': vacancy.responsibility,
-                       'work_format': vacancy.work_format,
-                       'experience': vacancy.experience,
-                       'employment': vacancy.employment}
-
         with open(f'{self.__filename}.json', 'r', encoding='utf-8') as file:
             vacancies_data = json.load(file)
 
-        vacancies_data['vacancies'].append(new_vacancy)
+        vacancies_data['vacancies'].append(JSONSaver.__valid([vacancy]))
 
         with open(f'{self.__filename}.json', 'w', encoding='utf-8') as file:
             json.dump(vacancies_data, file, ensure_ascii=False)
