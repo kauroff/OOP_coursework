@@ -11,7 +11,6 @@ def user_interaction():
     search_query = input("Введите поисковый запрос: ").lower()
     hh_vacancies = hh_api.get_vacancies(search_query)
     vacancies_list = Vacancy.cast_to_object_list(hh_vacancies)
-    print(vacancies_list)
     json_saver = JSONSaver()
     json_saver.add_info(vacancies_list)
     answer = input('''Если хотите добавить вакансию в файл - введите A
