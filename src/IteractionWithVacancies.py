@@ -67,14 +67,10 @@ class JSONSaver(Connector):
 
         for vacancy in vacancies_list:
 
-            if (vacancy.address == ('Москва' or 'Адрес не указан') and
-                    (vacancy.experience == 'Нет опыта') and ((vacancy.name,
-                                                              vacancy.url,
-                                                              vacancy.salary,
-                                                              vacancy.requirement,
-                                                              vacancy.responsibility,
-                                                              vacancy.work_format,
-                                                              vacancy.employment) is str and not None)):
+            if ((vacancy.name is str, vacancy.url is str, vacancy.address is str, vacancy.requirement is str,
+                 vacancy.responsibility is str, vacancy.work_format is str, vacancy.experience is str,
+                 vacancy.employment is str,
+                 vacancy.salary is int and not None)):
                 data.append({'name': vacancy.name,
                              'url': vacancy.url,
                              'salary': vacancy.salary,
@@ -94,6 +90,7 @@ class JSONSaver(Connector):
         data = {'vacancies': []}
 
         data['vacancies'].extend(JSONSaver.__valid(vacancies_list))
+        print(JSONSaver.__valid(vacancies_list))
 
         with open(self.__filename, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False)

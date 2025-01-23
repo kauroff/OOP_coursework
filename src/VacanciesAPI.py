@@ -106,8 +106,8 @@ class Vacancy:
         """
         vacancies_list = []
         for item in list_of_vacancies:
-            # print(item)
-            if (item['address'] is None or item['address']['city'] == 'Москва') and item['experience'] == 'Нет опыта':
+            if ((item['address'] is None or item['address']['city'] == 'Москва')
+                    and item['experience']['name'] == 'Нет опыта'):
                 name = item['name']
                 url = item['id']
                 if item['salary'] is not None:
