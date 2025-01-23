@@ -7,19 +7,18 @@ def filter_vacancies(vacancies_list: list, filter_words: list):
     """
     data = []
     for item in vacancies_list:
-        if (item.__address == 'Москва' or 'Адрес не указан') and item.__experience == 'Нет опыта':
-            try:
-                requirement = item.__requirement.split()
-            except AttributeError:
-                requirement = []
-            try:
-                responsibility = item.__responsibility.split()
-            except AttributeError:
-                responsibility = []
+        try:
+            requirement = item.requirement.split()
+        except AttributeError:
+            requirement = []
+        try:
+            responsibility = item.responsibility.split()
+        except AttributeError:
+            responsibility = []
 
-            for word in filter_words:
-                if (word in (requirement + responsibility)) and (item not in data):
-                    data.append(item)
+        for word in filter_words:
+            if (word in (requirement + responsibility)) and (item not in data):
+                data.append(item)
     return data
 
 
@@ -66,7 +65,7 @@ def print_vacancies(top_vacancies: list):
     """
     Функция, которая выводит результат в консоль
     :param top_vacancies: конечный результат
-    :return: конечный результат
+    :return: None
     """
     for element in top_vacancies:
         print()
