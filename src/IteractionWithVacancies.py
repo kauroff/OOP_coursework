@@ -69,20 +69,20 @@ class JSONSaver(Connector):
             if (vacancy.__address == ('Москва' or 'Адрес не указан') and
                     (vacancy.__experience == 'Нет опыта') and
                     (vacancy.__salary is int and not None) and ((vacancy.__name,
-                                                                 vacancy.__url,
-                                                                 vacancy.__requirement,
-                                                                 vacancy.__responsibility,
-                                                                 vacancy.__work_format,
-                                                                 vacancy.__employment) is str and not None)):
-                data.append({'name': vacancy.name,
-                             'url': vacancy.url,
-                             'salary': vacancy.salary,
-                             'address': vacancy.address,
-                             'requirement': vacancy.requirement,
-                             'responsibility': vacancy.responsibility,
-                             'work_format': vacancy.work_format,
-                             'experience': vacancy.experience,
-                             'employment': vacancy.employment})
+                                                               vacancy.__url,
+                                                               vacancy.__requirement,
+                                                               vacancy.__responsibility,
+                                                               vacancy.__work_format,
+                                                               vacancy.__employment) is str and not None)):
+                data.append({'name': vacancy.__name,
+                             'url': vacancy.__url,
+                             'salary': vacancy.__salary,
+                             'address': vacancy.__address,
+                             'requirement': vacancy.__requirement,
+                             'responsibility': vacancy.__responsibility,
+                             'work_format': vacancy.__work_format,
+                             'experience': vacancy.__experience,
+                             'employment': vacancy.__employment})
         return data
 
     def add_info(self, vacancies_list: list):

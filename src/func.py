@@ -7,13 +7,13 @@ def filter_vacancies(vacancies_list: list, filter_words: list):
     """
     data = []
     for item in vacancies_list:
-        if (item.address == 'Москва' or 'Адрес не указан') and item.experience == 'Нет опыта':
+        if (item.__address == 'Москва' or 'Адрес не указан') and item.__experience == 'Нет опыта':
             try:
-                requirement = item.requirement.split()
+                requirement = item.__requirement.split()
             except AttributeError:
                 requirement = []
             try:
-                responsibility = item.responsibility.split()
+                responsibility = item.__responsibility.split()
             except AttributeError:
                 responsibility = []
 

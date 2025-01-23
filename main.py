@@ -29,9 +29,9 @@ def user_interaction():
     elif answer == 'D':
         url = input('Введите url вакансии в формате <https://hh.ru/vacancy/123456>: ')
         json_saver.delete_vacancy(url)
-    top_n = int(input("Введите количество вакансий для вывода в топ N: "))
     filter_words = input("Введите ключевые слова для фильтрации вакансий: ").split()
     salary_range = int(input("Введите желаемую зарплату: "))
+    top_n = int(input("Введите количество вакансий для вывода в топ N: "))
 
     filtered_vacancies = filter_vacancies(vacancies_list, filter_words)
 
@@ -39,6 +39,7 @@ def user_interaction():
 
     sorted_vacancies = sort_vacancies(ranged_vacancies)
     top_vacancies = get_top_vacancies(sorted_vacancies, top_n)
+    json_saver.add_info(top_vacancies)
     print_vacancies(top_vacancies)
 
 
