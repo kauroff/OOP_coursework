@@ -90,7 +90,6 @@ class JSONSaver(Connector):
         data = {'vacancies': []}
 
         data['vacancies'].extend(JSONSaver.__valid(vacancies_list))
-        print(JSONSaver.__valid(vacancies_list))
 
         with open(self.__filename, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False)
