@@ -70,6 +70,16 @@ class Vacancy:
         self.experience = experience
         self.employment = employment
 
+    def __lt__(self, other):
+        """
+        Переопределенный метод сравнения
+        :param other: другой объект класса
+        :return: отсортированные вакансии
+        """
+        if self.salary < other.salary:
+            self.salary, other.salary = other.salary, self.salary
+        return self.salary, other.salary
+
     # @property
     # def get_address(self):
     #     return self.__address
