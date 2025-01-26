@@ -89,19 +89,20 @@ class JSONSaver(Connector):
 
         for vacancy in vacancies_list:
 
-            if ((vacancy.name is str, vacancy.url is str, vacancy.address is str, vacancy.requirement is str,
-                 vacancy.responsibility is str, vacancy.work_format is str, vacancy.experience is str,
-                 vacancy.employment is str,
-                 vacancy.salary is int and not None)):
-                data.append({'name': vacancy.name,
-                             'url': vacancy.url,
-                             'salary': vacancy.salary,
-                             'address': vacancy.address,
-                             'requirement': vacancy.requirement,
-                             'responsibility': vacancy.responsibility,
-                             'work_format': vacancy.work_format,
-                             'experience': vacancy.experience,
-                             'employment': vacancy.employment})
+            if ((
+            vacancy.get_name is str, vacancy.get_url is str, vacancy.get_address is str, vacancy.get_requirement is str,
+            vacancy.get_responsibility is str, vacancy.get_work_format is str, vacancy.get_experience is str,
+            vacancy.get_employment is str,
+            vacancy.get_salary is int and not None)):
+                data.append({'name': vacancy.get_name,
+                             'url': vacancy.get_url,
+                             'salary': vacancy.get_salary,
+                             'address': vacancy.get_address,
+                             'requirement': vacancy.get_requirement,
+                             'responsibility': vacancy.get_responsibility,
+                             'work_format': vacancy.get_work_format,
+                             'experience': vacancy.get_experience,
+                             'employment': vacancy.get_employment})
         return data
 
     def add_info(self, vacancies_list: list):

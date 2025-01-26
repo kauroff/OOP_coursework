@@ -60,15 +60,15 @@ class Vacancy:
         :param experience: опыт
         :param employment: рабочий день
         """
-        self.name = name
-        self.url = f'https://hh.ru/vacancy/{url}'
-        self.salary = salary
-        self.address = address
-        self.requirement = requirement
-        self.responsibility = responsibility
-        self.work_format = work_format
-        self.experience = experience
-        self.employment = employment
+        self.__name = name
+        self.__url = f'https://hh.ru/vacancy/{url}'
+        self.__salary = salary
+        self.__address = address
+        self.__requirement = requirement
+        self.__responsibility = responsibility
+        self.__work_format = work_format
+        self.__experience = experience
+        self.__employment = employment
 
     def __lt__(self, other):
         """
@@ -76,37 +76,44 @@ class Vacancy:
         :param other: другой объект класса
         :return: отсортированные вакансии
         """
-        if self.salary < other.salary:
-            self.salary, other.salary = other.salary, self.salary
-        return self.salary, other.salary
+        if self.get_salary < other.get_salary:
+            return other.get_salary, self.get_salary
 
-    # @property
-    # def get_address(self):
-    #     return self.__address
-    #
-    # def get_experience(self):
-    #     return self.__experience
-    #
-    # def get_name(self):
-    #     return self.__name
-    #
-    # def get_url(self):
-    #     return self.__url
-    #
-    # def get_salary(self):
-    #     return self.__salary
-    #
-    # def get_requirement(self):
-    #     return self.__requirement
-    #
-    # def get_responsibility(self):
-    #     return self.__responsibility
-    #
-    # def get_work_format(self):
-    #     return self.__work_format
-    #
-    # def get_employment(self):
-    #     return self.__employment
+    @property
+    def get_address(self):
+        return self.__address
+
+    @property
+    def get_experience(self):
+        return self.__experience
+
+    @property
+    def get_name(self):
+        return self.__name
+
+    @property
+    def get_url(self):
+        return self.__url
+
+    @property
+    def get_salary(self):
+        return self.__salary
+
+    @property
+    def get_requirement(self):
+        return self.__requirement
+
+    @property
+    def get_responsibility(self):
+        return self.__responsibility
+
+    @property
+    def get_work_format(self):
+        return self.__work_format
+
+    @property
+    def get_employment(self):
+        return self.__employment
 
     @staticmethod
     def cast_to_object_list(list_of_vacancies: list):
