@@ -45,9 +45,8 @@ def sort_vacancies(ranged_vacancies: list):
     N = len(ranged_vacancies)
     for i in range(N):
         for j in range(N - 1 - i):
-            if ranged_vacancies[j].salary < ranged_vacancies[j + 1].salary:
-                ranged_vacancies[j].salary, ranged_vacancies[j + 1].salary = ranged_vacancies[j + 1].salary, \
-                    ranged_vacancies[j].salary
+            if ranged_vacancies[j] < ranged_vacancies[j + 1]:
+                continue
     return ranged_vacancies
 
 
