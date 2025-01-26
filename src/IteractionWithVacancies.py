@@ -10,9 +10,8 @@ class Connector(ABC):
     @abstractmethod
     def add_vacancy(self, vacancy):
         """
-        Добавление вакансии
-        :param vacancy: объект класса
-        :return: None
+        Метод для добавления вакансии в файл
+        :param vacancy: объект класса вакансии
         """
         pass
 
@@ -26,11 +25,34 @@ class Connector(ABC):
         pass
 
     @abstractmethod
-    def delete_vacancy(self, vacancy):
+    def delete_vacancy(self, url):
         """
-        Удаление информации о вакансии.
-        :param вакансию для удаления
-        :return: None
+        Метод для удаления вакансии из файла
+        :param url: параметр для поиска вакансии в файле
+        :return: сообщение об окончании
+        """
+        pass
+
+    @abstractmethod
+    def get_info(self):
+        """
+        Метод для получения данных из файла
+        :return: JSON-словарь со всеми вакансиями
+        """
+        pass
+
+    @abstractmethod
+    def add_info(self, vacancies_list):
+        """
+        Метод для записи вакансий в JSON-файл с валидацией данных
+        :param vacancies_list: список объектов вакансий
+        """
+        pass
+
+    @abstractmethod
+    def delete_info(self):
+        """
+        Метод для удаления данных из файла
         """
         pass
 
@@ -117,7 +139,7 @@ class JSONSaver(Connector):
 
     def get_vacancy(self, parameter):
         """
-        Метод для получения вакансии по заданному параметру
+        Метод для получения вакансии из файла по заданному параметру
         :param parameter: заданный параметр
         :return: вакансия или ответ об ее отсутствии
         """
@@ -182,4 +204,13 @@ class ExcelSaver(Connector):
         pass
 
     def delete_vacancy(self, **kwargs):
+        pass
+
+    def get_info(self):
+        pass
+
+    def add_info(self, vacancies_list):
+        pass
+
+    def delete_info(self):
         pass
