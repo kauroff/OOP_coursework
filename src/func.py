@@ -8,11 +8,11 @@ def filter_vacancies(vacancies_list: list, filter_words: list):
     data = []
     for item in vacancies_list:
         try:
-            requirement = item.requirement.split()
+            requirement = item.get_requirement.split()
         except AttributeError:
             requirement = []
         try:
-            responsibility = item.responsibility.split()
+            responsibility = item.get_responsibility.split()
         except AttributeError:
             responsibility = []
 
@@ -31,7 +31,7 @@ def get_vacancies_by_salary(filtered_vacancies: list, salary_range: int):
     """
     data = []
     for item in filtered_vacancies:
-        if salary_range < item.salary:
+        if salary_range < item.get_salary:
             data.append(item)
     return data
 
@@ -68,13 +68,13 @@ def print_vacancies(top_vacancies: list):
     """
     for element in top_vacancies:
         print()
-        print(element.name)
-        print(element.url)
-        print(element.salary)
-        print(element.address)
-        print(element.requirement)
-        print(element.responsibility)
-        print(element.work_format)
-        print(element.experience)
-        print(element.employment)
-        print('________________')
+        print(element.get_name)
+        print(element.get_url)
+        print(element.get_salary)
+        print(element.get_address)
+        print(element.get_requirement)
+        print(element.get_responsibility)
+        print(element.get_work_format)
+        print(element.get_experience)
+        print(element.get_employment)
+        print('________________________________')
