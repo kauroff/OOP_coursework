@@ -26,18 +26,12 @@ def vacancy():
 
 
 def test_init_vacancy(vacancy):
-    assert vacancy.name == 'a'
-    assert vacancy.url == 'https://hh.ru/vacancy/b'
-    assert vacancy.salary == 100000
-    assert vacancy.address == 'Москва'
-    assert vacancy.requirement == 'word'
-    assert vacancy.responsibility == 'c'
-    assert vacancy.work_format == 'd'
-    assert vacancy.experience == 'Нет опыта'
-    assert vacancy.employment == 'e'
-
-
-# def test_cast_to_object_list(vacancy):
-#     assert vacancy.cast_to_object_list([{'name': 'a', 'id': 'a', 'salary': None, 'address': {'city': 'a'},
-#                                          'snippet': {'requirement': 'a', 'responsibility': 'a'}, 'work_format': [
-#             {'name': 'a'}], 'experience': {'name': 'a'}, 'employment': {'name': 'a'}}]) == [vacancy]
+    assert vacancy.get_name == 'a'
+    assert vacancy.get_url == 'https://hh.ru/vacancy/b'
+    assert vacancy.get_salary == 100000
+    assert vacancy.get_address == 'Москва'
+    assert vacancy.get_requirement == 'word'
+    assert vacancy.get_responsibility == 'c'
+    assert vacancy.get_work_format == 'd'
+    assert vacancy.get_experience == 'Нет опыта'
+    assert vacancy.get_employment == 'e'
