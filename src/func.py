@@ -60,7 +60,7 @@ def get_top_vacancies(sorted_vacancies: list, top_n: int):
     return sorted_vacancies[:top_n]
 
 
-def print_vacancies(top_vacancies: list):
+def show_vacancies(top_vacancies: list):
     """
     Функция, которая выводит результат в консоль
     :param top_vacancies: конечный результат
