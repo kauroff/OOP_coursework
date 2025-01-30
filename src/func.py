@@ -67,11 +67,7 @@ def print_vacancies(top_vacancies: list):
     :return: None
     """
     for element in top_vacancies:
-        return f'\n\n\n\n\n\n\n\n\n\n'
-        print()
-        print(element.get_name)
-        print(element.get_url)
-        print(element.get_salary)
+        return f'\n{element.get_name}\n{element.get_url}\n{element.get_salary}\n\n\n\n\n\n\n'
         print(element.get_address)
         print(element.get_requirement)
         print(element.get_responsibility)
