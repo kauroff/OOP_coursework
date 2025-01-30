@@ -67,6 +67,7 @@ def print_vacancies(top_vacancies: list):
     :return: None
     """
     for element in top_vacancies:
+        return f'\n\n\n\n\n\n\n\n\n\n'
         print()
         print(element.get_name)
         print(element.get_url)
