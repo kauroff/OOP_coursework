@@ -1,6 +1,6 @@
 from src.VacanciesAPI import HeadHunterAPI, Vacancy
 from src.IteractionWithVacancies import JSONSaver
-from src.func import filter_vacancies, get_top_vacancies, sort_vacancies, get_vacancies_by_salary, print_vacancies
+from src.func import filter_vacancies, get_top_vacancies, sort_vacancies, get_vacancies_by_salary, show_vacancies
 
 hh_api = HeadHunterAPI()
 
@@ -40,7 +40,7 @@ def user_interaction():
 
     sorted_vacancies = sort_vacancies(ranged_vacancies)
     top_vacancies = get_top_vacancies(sorted_vacancies, top_n)
-    print_vacancies(top_vacancies)
+    print(show_vacancies(top_vacancies))
 
 
 if __name__ == "__main__":
