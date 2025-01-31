@@ -67,4 +67,13 @@ def show_vacancies(top_vacancies: list):
     :return: None
     """
     for element in top_vacancies:
-        return f'\n{element.get_name}\n{element.get_url}\n{element.get_salary}\n{element.get_address}\n{element.get_requirement}\n{element.get_responsibility}\n{element.get_work_format}\n{element.get_experience}\n{element.get_employment}\n{'________________________________'}'
+        return f'''\n{element.get_name}
+        \n{element.get_url}
+        \n{element.get_salary}
+        \n{element.get_address}
+        \n{element.get_requirement}
+        \n{element.get_responsibility}
+        \n{element.get_work_format}
+        \n{element.get_experience}
+        \n{element.get_employment}
+        \n________________________________'''

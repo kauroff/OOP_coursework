@@ -1,6 +1,6 @@
 from src.VacanciesAPI import HeadHunterAPI, Vacancy
 from src.IteractionWithVacancies import JSONSaver
-from src.func import filter_vacancies, get_top_vacancies, sort_vacancies, get_vacancies_by_salary, print_vacancies
+from src.func import filter_vacancies, get_top_vacancies, sort_vacancies, get_vacancies_by_salary, show_vacancies
 
 hh_api = HeadHunterAPI()
 
