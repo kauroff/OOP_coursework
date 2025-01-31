@@ -196,23 +196,3 @@ class JSONSaver(Connector):
             return 'Вакансия успешно удалена'
         else:
             return 'Вакансии с таким url нет'
-
-
-class ExcelSaver(Connector):
-    def add_vacancy(self, vacancy):
-        pass
-
-    def get_vacancy(self, **kwargs):
-        pass
-
-    def delete_vacancy(self, **kwargs):
-        pass
-
-    def get_info(self):
-        pass
-
-    def add_info(self, vacancies_list):
-        pass
-
-    def delete_info(self):
-        pass
