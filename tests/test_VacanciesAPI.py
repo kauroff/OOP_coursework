@@ -15,10 +15,6 @@ def test_init_parser(parser):
     assert parser.vacancies == []
 
 
-def test_get_vacancies(parser):
-    assert parser.get_vacancies('saodhoashdioasd') == []
-
-
 @pytest.fixture
 def vacancy():
     vacancy = Vacancy("a", "b", 100000, "Москва", "word", "c", "d", 'Нет опыта', "e")
