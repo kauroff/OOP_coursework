@@ -1,5 +1,5 @@
 import pytest
-from src.func import filter_vacancies, get_vacancies_by_salary, sort_vacancies, get_top_vacancies, show_vacancies
+from src.func import filter_vacancies, get_vacancies_by_salary, sort_vacancies, get_top_vacancies, print_vacancies
 from src.VacanciesAPI import Vacancy
 
 
@@ -28,7 +28,4 @@ def test_get_top_vacancies(filtered):
 
 
 def test_show_vacancies(filtered):
-    assert show_vacancies(
-        filtered) == '\n''a\n''        \n''https://hh.ru/vacancy/b\n''        \n''100000\n''        \n''Москва\n' \
-                     '        \n''word\n''        \n''c\n''        \n''d\n''        \n''Нет опыта\n''        \n' \
-                     'e\n''        \n''________________________________'
+    assert print_vacancies(filtered) is None

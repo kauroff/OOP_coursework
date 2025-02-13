@@ -115,7 +115,7 @@ class JSONSaver(Connector):
         with open(self.__filename, 'r', encoding='utf-8') as file:
             vacancies_data = json.load(file)
 
-        vacancies_data['vacancies'].extend(JSONSaver.__valid([vacancy]))
+        vacancies_data['vacancies'].extend(vacancy)
 
         with open(self.__filename, 'w', encoding='utf-8') as file:
             json.dump(vacancies_data, file, ensure_ascii=False)
