@@ -60,20 +60,22 @@ def get_top_vacancies(sorted_vacancies: list, top_n: int):
     return sorted_vacancies[:top_n]
 
 
-def show_vacancies(top_vacancies: list):
+def print_vacancies(top_vacancies: list):
     """
     Функция, которая выводит результат в консоль
     :param top_vacancies: конечный результат
     :return: None
     """
     for element in top_vacancies:
-        return f'''\n{element.get_name}
-        \n{element.get_url}
-        \n{element.get_salary}
-        \n{element.get_address}
-        \n{element.get_requirement}
-        \n{element.get_responsibility}
-        \n{element.get_work_format}
-        \n{element.get_experience}
-        \n{element.get_employment}
-        \n________________________________'''
+        print(f'''
+{element.get_name}
+{element.get_url}
+{element.get_salary}
+{element.get_address}
+{element.get_requirement}
+{element.get_responsibility}
+{element.get_work_format}
+{element.get_experience}
+{element.get_employment}
+________________________________
+        ''')

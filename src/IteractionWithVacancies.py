@@ -140,17 +140,17 @@ class JSONSaver(Connector):
                 work_format = uniq_vacancy['work_format']
                 experience = uniq_vacancy['experience']
                 employment = uniq_vacancy['employment']
-                return f"""\n
-                Вот, что удалось найти:\n
-                {name}\n
-                {url}\n
-                {salary}\n
-                {address}\n
-                {requirement}\n
-                {responsibility}\n
-                {work_format}\n
-                {experience}\n
-                {employment}\n
+                return f"""
+                Вот, что удалось найти:
+                {name}
+                {url}
+                {salary}
+                {address}
+                {requirement}
+                {responsibility}
+                {work_format}
+                {experience}
+                {employment}
                 """
             else:
                 return 'Вакансии с таким значением нет'
