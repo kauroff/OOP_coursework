@@ -52,7 +52,7 @@ def test_add_vacancy(saver):
 
 
 def test_get_vacancy(saver):
-    assert saver.get_vacancy('') == 'Вакансии с таким значением нет'
+    assert saver.get_vacancy('') is None
 
 
 def test_delete_vacancy(saver):

@@ -21,8 +21,12 @@ def user_interaction() -> None:
         name, url, salary, address, requirement, responsibility, work_format, experience, employment = input(
             '''Введите вакансию для добавления в файл в формате: <Название вакансии>, <Ссылка на вакансию>, <Зарплата>,
             <Адрес>, <Требования>, <Обязанности>, <Формат работы>, <Опыт>, <График>:\n''').split(', ')
-        vacancy = Vacancy(name, url, salary, address, requirement, responsibility, work_format, experience, employment)
-        json_saver.add_vacancy(vacancy)
+        try:
+            vacancy = Vacancy(name, url, salary, address, requirement, responsibility, work_format,
+                              experience, employment)
+            json_saver.add_vacancy(vacancy)
+        except ValueError:
+            print('Неподходящий тип данных')
     elif answer == 'G':
         parameter = input('Введите значение: ')
         json_saver.get_vacancy(parameter)
