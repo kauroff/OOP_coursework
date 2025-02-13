@@ -62,14 +62,14 @@ class JSONSaver(Connector):
     Сохранение информации о вакансиях в JSON-файл
     """
 
-    def __init__(self, filename='vacancies'):
+    def __init__(self, filename='vacancies') -> None:
         """
         Метод инициализации для записи вакансий в JSON-файл
         :param filename: название файла
         """
         self.__filename = f'{filename}.json'
 
-    def get_info(self):
+    def get_info(self) -> dict:
         """
         Метод для получения данных из файла
         :return: JSON-словарь со всеми вакансиями
@@ -78,7 +78,7 @@ class JSONSaver(Connector):
             data = json.load(file)
         return data
 
-    def add_info(self, vacancies_list: list):
+    def add_info(self, vacancies_list: list) -> None:
         """
         Метод для записи вакансий в JSON-файл с валидацией данных
         :param vacancies_list: список объектов вакансий
@@ -99,7 +99,7 @@ class JSONSaver(Connector):
         with open(self.__filename, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False)
 
-    def delete_info(self):
+    def delete_info(self) -> None:
         """
         Метод для удаления данных из файла
         """
@@ -107,7 +107,7 @@ class JSONSaver(Connector):
         with open(self.__filename, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False)
 
-    def add_vacancy(self, vacancy):
+    def add_vacancy(self, vacancy) -> None:
         """
         Метод для добавления вакансии в файл
         :param vacancy: объект класса вакансии
@@ -120,7 +120,7 @@ class JSONSaver(Connector):
         with open(self.__filename, 'w', encoding='utf-8') as file:
             json.dump(vacancies_data, file, ensure_ascii=False)
 
-    def get_vacancy(self, parameter):
+    def get_vacancy(self, parameter) -> None:
         """
         Метод для получения вакансии из файла по заданному параметру
         :param parameter: заданный параметр
@@ -140,22 +140,21 @@ class JSONSaver(Connector):
                 work_format = uniq_vacancy['work_format']
                 experience = uniq_vacancy['experience']
                 employment = uniq_vacancy['employment']
-                return f"""\n
-                Вот, что удалось найти:\n
-                {name}\n
-                {url}\n
-                {salary}\n
-                {address}\n
-                {requirement}\n
-                {responsibility}\n
-                {work_format}\n
-                {experience}\n
-                {employment}\n
-                """
+                print(f"""
+                {name}
+                {url}
+                {salary}
+                {address}
+                {requirement}
+                {responsibility}
+                {work_format}
+                {experience}
+                {employment}
+                """)
             else:
-                return 'Вакансии с таким значением нет'
+                print('Вакансии с таким значением нет')
 
-    def delete_vacancy(self, url):
+    def delete_vacancy(self, url) -> str:
         """
         Метод для удаления вакансии из файла
         :param url: параметр для поиска вакансии в файле

@@ -1,4 +1,4 @@
-def filter_vacancies(vacancies_list: list, filter_words: list):
+def filter_vacancies(vacancies_list: list, filter_words: list) -> list:
     """
     Функция, которая отбирает только подходящие по описанию вакансии
     :param vacancies_list: список объектов класса вакансий
@@ -22,7 +22,7 @@ def filter_vacancies(vacancies_list: list, filter_words: list):
     return data
 
 
-def get_vacancies_by_salary(filtered_vacancies: list, salary_range: int):
+def get_vacancies_by_salary(filtered_vacancies: list, salary_range: int) -> list:
     """
     Функция, которая отбирает только подходящие по зарплате вакансии (и в т.ч. если зп не указана)
     :param filtered_vacancies: список объектов подходящих вакансий
@@ -36,7 +36,7 @@ def get_vacancies_by_salary(filtered_vacancies: list, salary_range: int):
     return data
 
 
-def sort_vacancies(ranged_vacancies: list):
+def sort_vacancies(ranged_vacancies: list) -> list:
     """
     Функция, которая сортирует подходящие вакансии по заработной плате
     :param ranged_vacancies: список объектов подходящих вакансий
@@ -50,7 +50,7 @@ def sort_vacancies(ranged_vacancies: list):
     return ranged_vacancies
 
 
-def get_top_vacancies(sorted_vacancies: list, top_n: int):
+def get_top_vacancies(sorted_vacancies: list, top_n: int) -> list:
     """
     Функция, которая показывает топ-н вакансий по заработной плате
     :param sorted_vacancies: отсортированный список объектов
@@ -60,20 +60,22 @@ def get_top_vacancies(sorted_vacancies: list, top_n: int):
     return sorted_vacancies[:top_n]
 
 
-def show_vacancies(top_vacancies: list):
+def print_vacancies(top_vacancies: list) -> None:
     """
     Функция, которая выводит результат в консоль
     :param top_vacancies: конечный результат
     :return: None
     """
     for element in top_vacancies:
-        return f'''\n{element.get_name}
-        \n{element.get_url}
-        \n{element.get_salary}
-        \n{element.get_address}
-        \n{element.get_requirement}
-        \n{element.get_responsibility}
-        \n{element.get_work_format}
-        \n{element.get_experience}
-        \n{element.get_employment}
-        \n________________________________'''
+        print(f'''
+{element.get_name}
+{element.get_url}
+{element.get_salary}
+{element.get_address}
+{element.get_requirement}
+{element.get_responsibility}
+{element.get_work_format}
+{element.get_experience}
+{element.get_employment}
+________________________________
+        ''')
