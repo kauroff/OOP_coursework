@@ -60,15 +60,41 @@ class Vacancy:
         :param experience: опыт
         :param employment: рабочий день
         """
-        self.__name = name
-        self.__url = f'https://hh.ru/vacancy/{url}'
-        self.__salary = salary
-        self.__address = address
-        self.__requirement = requirement
-        self.__responsibility = responsibility
-        self.__work_format = work_format
-        self.__experience = experience
-        self.__employment = employment
+        if ((name is str, url is str, address is str, requirement is str, responsibility is str, work_format is str,
+             experience is str, employment is str, salary is int and not None)):
+            self.__name = name
+            self.__url = f'https://hh.ru/vacancy/{url}'
+            self.__salary = salary
+            self.__address = address
+            self.__requirement = requirement
+            self.__responsibility = responsibility
+            self.__work_format = work_format
+            self.__experience = experience
+            self.__employment = employment
+
+    @staticmethod
+    def __valid(vacancy: list):
+        """
+        Метод для валидации данных
+        :param vacancy: вакансия для валидации
+        :return: объект класса
+        """
+        if ((
+                vacancy.get_name is str, vacancy.get_url is str, vacancy.get_address is str,
+                vacancy.get_requirement is str,
+                vacancy.get_responsibility is str, vacancy.get_work_format is str, vacancy.get_experience is str,
+                vacancy.get_employment is str,
+                vacancy.get_salary is int and not None)):
+            data.append({'name': vacancy.get_name,
+                         'url': vacancy.get_url,
+                         'salary': vacancy.get_salary,
+                         'address': vacancy.get_address,
+                         'requirement': vacancy.get_requirement,
+                         'responsibility': vacancy.get_responsibility,
+                         'work_format': vacancy.get_work_format,
+                         'experience': vacancy.get_experience,
+                         'employment': vacancy.get_employment})
+        return data
 
     def __lt__(self, other):
         """

@@ -78,34 +78,6 @@ class JSONSaver(Connector):
             data = json.load(file)
         return data
 
-    @staticmethod
-    def __valid(vacancies_list: list):
-        """
-        Метод для валидации данных
-        :param vacancies_list: список объектов вакансий
-        :return: список словарей вакансий
-        """
-        data = []
-
-        for vacancy in vacancies_list:
-
-            if ((
-                    vacancy.get_name is str, vacancy.get_url is str, vacancy.get_address is str,
-                    vacancy.get_requirement is str,
-                    vacancy.get_responsibility is str, vacancy.get_work_format is str, vacancy.get_experience is str,
-                    vacancy.get_employment is str,
-                    vacancy.get_salary is int and not None)):
-                data.append({'name': vacancy.get_name,
-                             'url': vacancy.get_url,
-                             'salary': vacancy.get_salary,
-                             'address': vacancy.get_address,
-                             'requirement': vacancy.get_requirement,
-                             'responsibility': vacancy.get_responsibility,
-                             'work_format': vacancy.get_work_format,
-                             'experience': vacancy.get_experience,
-                             'employment': vacancy.get_employment})
-        return data
-
     def add_info(self, vacancies_list: list):
         """
         Метод для записи вакансий в JSON-файл с валидацией данных
@@ -113,7 +85,16 @@ class JSONSaver(Connector):
         """
         data = {'vacancies': []}
 
-        data['vacancies'].extend(JSONSaver.__valid(vacancies_list))
+        for vacancy in vacancies_list:
+            data['vacancies'].append({'name': vacancy.get_name,
+                                      'url': vacancy.get_url,
+                                      'salary': vacancy.get_salary,
+                                      'address': vacancy.get_address,
+                                      'requirement': vacancy.get_requirement,
+                                      'responsibility': vacancy.get_responsibility,
+                                      'work_format': vacancy.get_work_format,
+                                      'experience': vacancy.get_experience,
+                                      'employment': vacancy.get_employment})
 
         with open(self.__filename, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False)
