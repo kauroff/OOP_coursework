@@ -17,7 +17,7 @@ class HeadHunterAPI(Parser):
     Класс для работы с API HeadHunter
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Метод инициализации для запроса по API
         """
@@ -26,7 +26,7 @@ class HeadHunterAPI(Parser):
         self.params = {'text': '', 'page': 0, 'per_page': 100}
         self.vacancies = []
 
-    def get_vacancies(self, keyword):
+    def get_vacancies(self, keyword) -> list:
         """
         Получение вакансий с hh.ru
         :param keyword: ключевое слово
@@ -46,7 +46,8 @@ class Vacancy:
     Класс для работы с вакансиями
     """
 
-    def __init__(self, name, url, salary, address, requirement, responsibility, work_format, experience, employment):
+    def __init__(self, name, url, salary, address, requirement, responsibility, work_format,
+                 experience, employment) -> None:
         """
         Метод инициализации вакансии
         :param name: название вакансии
@@ -59,9 +60,11 @@ class Vacancy:
         :param experience: опыт
         :param employment: рабочий день
         """
-        Vacancy.__valid(self, name, url, salary, address, requirement, responsibility, work_format, experience, employment)
+        Vacancy.__valid(self, name, url, salary, address, requirement, responsibility, work_format, experience,
+                        employment)
 
-    def __valid(self, name, url, salary, address, requirement, responsibility, work_format, experience, employment):
+    def __valid(self, name, url, salary, address, requirement, responsibility, work_format, experience,
+                employment) -> None:
         """
         Метод валидации вакансии
         :param name: название вакансии
@@ -75,7 +78,7 @@ class Vacancy:
         :param employment: рабочий день
         """
         if ((name is str), (url is str), (address is str), (requirement is str), (responsibility is str),
-            (work_format is str), (experience is str), (employment is str), (salary is int and not None)):
+           (work_format is str), (experience is str), (employment is str), (salary is int and not None)):
             self.__name = name
             self.__url = f'https://hh.ru/vacancy/{url}'
             self.__salary = salary
@@ -86,7 +89,7 @@ class Vacancy:
             self.__experience = experience
             self.__employment = employment
 
-    def __lt__(self, other):
+    def __lt__(self, other) -> tuple:
         """
         Переопределенный метод сравнения
         :param other: другой объект класса
@@ -96,43 +99,43 @@ class Vacancy:
             return other.get_salary, self.get_salary
 
     @property
-    def get_address(self):
+    def get_address(self) -> str:
         return self.__address
 
     @property
-    def get_experience(self):
+    def get_experience(self) -> str:
         return self.__experience
 
     @property
-    def get_name(self):
+    def get_name(self) -> str:
         return self.__name
 
     @property
-    def get_url(self):
+    def get_url(self) -> str:
         return self.__url
 
     @property
-    def get_salary(self):
+    def get_salary(self) -> int:
         return self.__salary
 
     @property
-    def get_requirement(self):
+    def get_requirement(self) -> str:
         return self.__requirement
 
     @property
-    def get_responsibility(self):
+    def get_responsibility(self) -> str:
         return self.__responsibility
 
     @property
-    def get_work_format(self):
+    def get_work_format(self) -> str:
         return self.__work_format
 
     @property
-    def get_employment(self):
+    def get_employment(self) -> str:
         return self.__employment
 
     @staticmethod
-    def cast_to_object_list(list_of_vacancies: list):
+    def cast_to_object_list(list_of_vacancies: list) -> list:
         """
         Преобразование набора данных из словаря в список объектов
         :return: список объектов

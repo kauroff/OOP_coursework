@@ -6,7 +6,7 @@ hh_api = HeadHunterAPI()
 
 
 # Функция для взаимодействия с пользователем
-def user_interaction():
+def user_interaction() -> None:
     search_query = input("Введите поисковый запрос: ").lower()
     hh_vacancies = hh_api.get_vacancies(search_query)
     vacancies_list = Vacancy.cast_to_object_list(hh_vacancies)
