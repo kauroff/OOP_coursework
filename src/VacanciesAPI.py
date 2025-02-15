@@ -60,15 +60,15 @@ class Vacancy:
         :param experience: опыт
         :param employment: рабочий день
         """
-        self.__name = name
-        self.__url = f'https://hh.ru/vacancy/{url}'
-        self.__salary = salary
-        self.__address = address
-        self.__requirement = requirement
-        self.__responsibility = responsibility
-        self.__work_format = work_format
-        self.__experience = experience
-        self.__employment = employment
+        self.name = name
+        self.url = f'https://hh.ru/vacancy/{url}'
+        self.salary = salary
+        self.address = address
+        self.requirement = requirement
+        self.responsibility = responsibility
+        self.work_format = work_format
+        self.experience = experience
+        self.employment = employment
 
     def __lt__(self, other) -> tuple:
         """
@@ -76,8 +76,8 @@ class Vacancy:
         :param other: другой объект класса
         :return: отсортированные вакансии
         """
-        if self.salary < other.get_salary:
-            return other.get_salary, self.salary
+        if self.salary < other.salary:
+            return other.salary, self.salary
 
     @staticmethod
     def cast_to_object_list(list_of_vacancies: list) -> list:
