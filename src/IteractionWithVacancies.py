@@ -86,15 +86,15 @@ class JSONSaver(Connector):
         data = {'vacancies': []}
 
         for vacancy in vacancies_list:
-            data['vacancies'].append({'name': vacancy.get_name,
-                                      'url': vacancy.get_url,
-                                      'salary': vacancy.get_salary,
-                                      'address': vacancy.get_address,
-                                      'requirement': vacancy.get_requirement,
-                                      'responsibility': vacancy.get_responsibility,
-                                      'work_format': vacancy.get_work_format,
-                                      'experience': vacancy.get_experience,
-                                      'employment': vacancy.get_employment})
+            data['vacancies'].append({'name': vacancy.name,
+                                      'url': vacancy.url,
+                                      'salary': vacancy.salary,
+                                      'address': vacancy.address,
+                                      'requirement': vacancy.requirement,
+                                      'responsibility': vacancy.responsibility,
+                                      'work_format': vacancy.work_format,
+                                      'experience': vacancy.experience,
+                                      'employment': vacancy.employment})
 
         with open(self.__filename, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False)
@@ -115,13 +115,13 @@ class JSONSaver(Connector):
         with open(self.__filename, 'r', encoding='utf-8') as file:
             vacancies_data = json.load(file)
 
-        vacancies_data['vacancies'].append({'name': vacancy.get_name, 'url': vacancy.get_url,
-                                            'salary': vacancy.get_salary, 'address': vacancy.get_address,
-                                            'requirement': vacancy.get_requirement,
-                                            'responsibility': vacancy.get_responsibility,
-                                            'work_format': vacancy.get_work_format,
-                                            'experience': vacancy.get_experience,
-                                            'employment': vacancy.get_employment})
+        vacancies_data['vacancies'].append({'name': vacancy.name, 'url': vacancy.url,
+                                            'salary': vacancy.salary, 'address': vacancy.address,
+                                            'requirement': vacancy.requirement,
+                                            'responsibility': vacancy.responsibility,
+                                            'work_format': vacancy.work_format,
+                                            'experience': vacancy.experience,
+                                            'employment': vacancy.employment})
 
         with open(self.__filename, 'w', encoding='utf-8') as file:
             json.dump(vacancies_data, file, ensure_ascii=False)
