@@ -8,7 +8,7 @@ class Connector(ABC):
     """
 
     @abstractmethod
-    def add_vacancy(self, vacancy):
+    def add_vacancy(self, vacancy) -> None:
         """
         Метод для добавления вакансии в файл
         :param vacancy: объект класса вакансии
@@ -16,7 +16,7 @@ class Connector(ABC):
         pass
 
     @abstractmethod
-    def get_vacancy(self, parameter):
+    def get_vacancy(self, parameter) -> None:
         """
         Получение вакансии из файла по указанным критериям
         :param parameter: необходимый критерий
@@ -25,7 +25,7 @@ class Connector(ABC):
         pass
 
     @abstractmethod
-    def delete_vacancy(self, url):
+    def delete_vacancy(self, url) -> str:
         """
         Метод для удаления вакансии из файла
         :param url: параметр для поиска вакансии в файле
@@ -34,7 +34,7 @@ class Connector(ABC):
         pass
 
     @abstractmethod
-    def get_info(self):
+    def get_info(self) -> dict:
         """
         Метод для получения данных из файла
         :return: JSON-словарь со всеми вакансиями
@@ -42,7 +42,7 @@ class Connector(ABC):
         pass
 
     @abstractmethod
-    def add_info(self, vacancies_list):
+    def add_info(self, vacancies_list) -> None:
         """
         Метод для записи вакансий в JSON-файл с валидацией данных
         :param vacancies_list: список объектов вакансий
@@ -50,7 +50,7 @@ class Connector(ABC):
         pass
 
     @abstractmethod
-    def delete_info(self):
+    def delete_info(self) -> None:
         """
         Метод для удаления данных из файла
         """
@@ -126,7 +126,7 @@ class JSONSaver(Connector):
         with open(self.__filename, 'w', encoding='utf-8') as file:
             json.dump(vacancies_data, file, ensure_ascii=False)
 
-    def get_vacancy(self, parameter) -> None:
+    def get_vacancy(self, parameter) -> str:
         """
         Метод для получения вакансии из файла по заданному параметру
         :param parameter: заданный параметр
@@ -146,7 +146,7 @@ class JSONSaver(Connector):
                 work_format = uniq_vacancy['work_format']
                 experience = uniq_vacancy['experience']
                 employment = uniq_vacancy['employment']
-                print(f"""
+                return f"""
                 {name}
                 {url}
                 {salary}
@@ -156,9 +156,9 @@ class JSONSaver(Connector):
                 {work_format}
                 {experience}
                 {employment}
-                """)
+                """
             else:
-                print('Вакансии с таким значением нет')
+                return 'Вакансии с таким значением нет')
 
     def delete_vacancy(self, url) -> str:
         """
